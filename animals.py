@@ -15,8 +15,10 @@ pygame.display.set_caption('House of cats')
 tile_size = 50
 
 # load images
-sun_img = pygame.image.load('img\sun.png')
-bg_img = pygame.image.load('img\sky.png')
+sun_img = pygame.image.load(r'/home/CIN/tns2/Projeto-IP---Python/img/sun.png')
+bg_img = pygame.image.load(r'/home/CIN/tns2/Projeto-IP---Python/img/sky.png')
+lib_img = pygame.image.load(r'/home/CIN/tns2/Projeto-IP---Python/img/library2.png')
+# lib_img = pygame.transform.scale(lib_img,(1000,1000))
 
 def draw_grid(): # Just to call the lines
     for line in range(0,20): # 20
@@ -30,7 +32,7 @@ class Player():
         self.index = 0
         self.counter = 0
         for num in range(0,5):
-            img_right = pygame.image.load(f'img/cat/right{num}.png')
+            img_right = pygame.image.load(f'//home//CIN//tns2//Projeto-IP---Python//img//cat//right{num}.png')
             # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
             img_right = pygame.transform.scale(img_right,(40,45))
             img_left = pygame.transform.flip(img_right,True, False)
@@ -202,6 +204,7 @@ while(run == True):
     clock.tick(fps)
 
     screen.blit(bg_img, (0,0))
+    # screen.blit(lib_img, (0,0))
     screen.blit(sun_img, (100,100))
 
     world.draw()
