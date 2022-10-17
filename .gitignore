@@ -1,1 +1,5 @@
-/projetaoIP
+/project-venv
+/classes/background/__pycache__
+/classes/world/__pycache__
+/classes/player/__pycache__
+/constants/__pycache__
