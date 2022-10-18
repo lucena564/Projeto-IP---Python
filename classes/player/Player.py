@@ -4,11 +4,10 @@ from constants.BackgroundConstants import BackgroundConstants
 from classes.world.World import World
 
 screen = BackgroundConstants.SCREEN
-world = World()
 
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
-blob_group, lava_group, exit_group = pygame.sprite.Group()
+blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 
 class Player():
@@ -40,7 +39,7 @@ class Player():
         # self.jumped = False
         # self.direction = 0
 
-    def update(self, game_over):
+    def update(self, game_over, world_data):
         dx = 0
         dy = 0
         walk_cooldown = 1
@@ -95,7 +94,7 @@ class Player():
 
             # Check for Collision
             self.in_air = True
-            for tile in world.tile_list:
+            for tile in world_data.tile_list:
                 # Check for collision in x direction
                 if tile[1].colliderect(self.rect.x + dx, self.rect.y, self.width, self.height):
                     dx = 0
@@ -153,7 +152,7 @@ class Player():
         self.index = 0
         self.counter = 0
         for num in range(0,5):
-            img_right = pygame.image.load(f'img/cat/right{num}.png')
+            img_right = pygame.image.load(f'assets/characters/cat/right{num}.png')
             # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
             img_right = pygame.transform.scale(img_right,(40,45))
             img_left = pygame.transform.flip(img_right,True, False)
@@ -163,7 +162,7 @@ class Player():
             self.images_right.append(img_right)
             self.images_left.append(img_left)
 
-        self.dead_image = pygame.image.load(r'img\ghost.png')
+        self.dead_image = pygame.image.load(r'assets\characters\ghost.png')
         self.image = self.images_right[self.index]
         self.rect = self.image.get_rect()
         self.rect.x = x

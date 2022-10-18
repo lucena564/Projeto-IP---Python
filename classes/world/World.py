@@ -2,16 +2,16 @@ import os
 import pygame
 from constants.WorldDataConstants import WorldDataConstants
 from constants.BackgroundConstants import BackgroundConstants
-from classes.lava import Lava
 from classes.enemies.Enemy import Enemy
-from classes.menu.Menu import Menu
+from classes.exit.Exit import Exit
+from classes.lava.Lava import Lava
 
 tile_size = WorldDataConstants.TILE_SIZE
 
-blob_group, lava_group, exit_group = pygame.sprite.Group()
+blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 class World():
-    def __init__(self):
+    def __init__(self, world_data):
         self.tile_list = []
 
         # Load images
@@ -20,7 +20,7 @@ class World():
         # lava_img = pygame.image.load('img/lava.png')
 
         row_count = 0
-        for row in WorldDataConstants.MAP_DIMENSIONS:
+        for row in world_data:
             col_count = 0
             for tile in row:
                 if tile == 1: 
@@ -41,6 +41,7 @@ class World():
 
                 if tile == 3: # Para mudarmos o inimigo iremos precisar mexer aqui.
                     blob = Enemy(col_count * tile_size, row_count * tile_size + 15) # argumentos: Depende da coluna * tile_size, o msm p/ linha  
+                    
                     blob_group.add(blob)
 
                 if tile == 6:
@@ -48,7 +49,7 @@ class World():
                     lava_group.add(lava)
 
                 if tile == 8:
-                    exit_action = Menu.exit(col_count * tile_size, row_count * tile_size - (tile_size // 2))
+                    exit_action = Exit(col_count * tile_size, row_count * tile_size - (tile_size // 2))
                     
                     exit_group.add(exit_action)
 

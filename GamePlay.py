@@ -18,7 +18,7 @@ main_menu = True
 level = 0
 max_levels = 7
 
-blob_group, lava_group, exit_group = pygame.sprite.Group()
+blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen_width = BackgroundConstants.SCREEN_WIDTH
 screen_height = BackgroundConstants.SCREEN_HEIGHT
@@ -28,24 +28,30 @@ screen = BackgroundConstants.SCREEN
 pygame.display.set_caption('House of cats')
 
 tile_size = WorldDataConstants.TILE_SIZE
+# load images
+sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
+bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
+lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+
+restart_img = pygame.image.load(path.join('assets', 'menu','restart_btn.png'))
+start_img = pygame.image.load(path.join('assets', 'menu','start_btn.png'))
+exit_img = pygame.image.load(path.join('assets', 'menu', 'exit_btn.png'))
 
 restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
-player = Player(88,screen_height - 102)
-
-if path.exists(f'level{level}_data'):
-    pickle_in = open(f'level{level}_data', 'rb')
+if path.exists(f'levels/level{level}_data'):
+    pickle_in = open(f'levels/level{level}_data', 'rb')
     
     world_data = pickle.load(pickle_in)
     
 world = World(world_data)
 
-# load images
-sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
-bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
-lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+player = Player(88,screen_height - 102)
+
+
+
 # lib_img = pygame.transform.scale(lib_img,(1000,1000))
 
 def draw_grid(): # Just to call the lines
@@ -59,8 +65,8 @@ def reset_level(level):
     exit_group.empty()
 
     # Load in level data and create world
-    if path.exists(f'level{level}_data'):
-        pickle_in = open(f'level{level}_data', 'rb')
+    if path.exists(f'levels/level{level}_data'):
+        pickle_in = open(f'levels/level{level}_data', 'rb')
         
         world_data = pickle.load(pickle_in)
     world = World(world_data)
@@ -96,7 +102,7 @@ while(run == True):
         lava_group.draw(screen)
         exit_group.draw(screen)
 
-        game_over = player.update(game_over)
+        game_over = player.update(game_over, world)
 
         # If player died
         if game_over == -1:

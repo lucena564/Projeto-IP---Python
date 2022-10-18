@@ -1,14 +1,13 @@
 import pygame
 from constants.WorldDataConstants import WorldDataConstants
+from os import path
 
 tile_size = WorldDataConstants.TILE_SIZE
 
-class Menu(pygame.sprite.Sprite):
-    def __init__(self, x, y): 
+class Exit(pygame.sprite.Sprite):
+    def __init__(self,x,y): 
         pygame.sprite.Sprite.__init__(self)
-
-    def exit(self):
-        img = pygame.image.load('img/exit.png')
+        img = pygame.image.load(path.join('assets','background','exit.png'))
         self.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))
         self.rect = self.image.get_rect()
         self.rect.x = x
