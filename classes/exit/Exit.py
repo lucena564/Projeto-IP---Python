@@ -1,8 +1,8 @@
 import pygame
-from constants.WorldDataConstants import WorldDataConstants
+from constants.BackgroundConstants import BackgroundConstants
 from os import path
 
-tile_size = WorldDataConstants.TILE_SIZE
+tile_size = BackgroundConstants.TILE_SIZE
 
 class Exit(pygame.sprite.Sprite):
     def __init__(self,x,y): 

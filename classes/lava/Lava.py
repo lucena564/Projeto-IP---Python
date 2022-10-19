@@ -1,8 +1,8 @@
 import pygame
 from os import path
-from constants.WorldDataConstants import WorldDataConstants
+from constants.BackgroundConstants import BackgroundConstants
 
-tile_size = WorldDataConstants.TILE_SIZE
+tile_size = BackgroundConstants.TILE_SIZE
 
 class Lava(pygame.sprite.Sprite):
     def __init__(self, x, y): 
