@@ -4,9 +4,8 @@
   <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38519644-2010-4a95-afbe-6294409b100e/df01nc6-a28c72e6-7da2-4cd5-8a06-3d636730c0cb.png/v1/fill/w_970,h_824,q_70,strp/farmer_cat_by_selleriart_df01nc6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4OCIsInBhdGgiOiJcL2ZcLzM4NTE5NjQ0LTIwMTAtNGE5NS1hZmJlLTYyOTQ0MDliMTAwZVwvZGYwMW5jNi1hMjhjNzJlNi03ZGEyLTRjZDUtOGEwNi0zZDYzNjczMGMwY2IucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5YYX8XPeCXw_AR8MXsuFBnd-HPtUq1AXFe68D127b34">
     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38519644-2010-4a95-afbe-6294409b100e/df01nc6-a28c72e6-7da2-4cd5-8a06-3d636730c0cb.png/v1/fill/w_970,h_824,q_70,strp/farmer_cat_by_selleriart_df01nc6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4OCIsInBhdGgiOiJcL2ZcLzM4NTE5NjQ0LTIwMTAtNGE5NS1hZmJlLTYyOTQ0MDliMTAwZVwvZGYwMW5jNi1hMjhjNzJlNi03ZGEyLTRjZDUtOGEwNi0zZDYzNjczMGMwY2IucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5YYX8XPeCXw_AR8MXsuFBnd-HPtUq1AXFe68D127b34" alt="Logo" height="300">
   </a>
-
-  <h3 align="center">Game project with Python and Object Oriented Programming (OOP) structure</h3>
   <h2 align="center">House of cats😼💖</h2> 
+  <h3 align="center">Game project with Python and Object Oriented Programming (OOP) structure</h3>
 
   <p align="center">
     CIn UFPE | October 2022 | Introduction to programming (IP)
