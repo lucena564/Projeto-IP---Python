@@ -2,11 +2,12 @@ from os import path
 import pickle
 import pygame
 from constants.BackgroundConstants import BackgroundConstants
-from constants.WorldDataConstants import WorldDataConstants
 from classes.button.Button import Button 
 
 from classes.player.Player import Player
-from classes.world.World import World
+from classes.world.World import World, blob_group, lava_group, exit_group
+
+from levels.levels_data import LEVEL_1_MAP_DIMENSIONS
 
 pygame.init()
 
@@ -18,8 +19,6 @@ main_menu = True
 level = 0
 max_levels = 7
 
-blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
-
 screen_width = BackgroundConstants.SCREEN_WIDTH
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
@@ -27,7 +26,7 @@ screen = BackgroundConstants.SCREEN
 
 pygame.display.set_caption('House of cats')
 
-tile_size = WorldDataConstants.TILE_SIZE
+tile_size = BackgroundConstants.TILE_SIZE
 # load images
 sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
 bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
@@ -41,11 +40,12 @@ restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restar
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
-if path.exists(f'levels/level{level}_data'):
+""" if path.exists(f'levels/level{level}_data'):
     pickle_in = open(f'levels/level{level}_data', 'rb')
     
-    world_data = pickle.load(pickle_in)
+    world_data = pickle.load(pickle_in) """
     
+world_data = LEVEL_1_MAP_DIMENSIONS
 world = World(world_data)
 
 player = Player(88,screen_height - 102)
@@ -64,11 +64,13 @@ def reset_level(level):
     lava_group.empty()
     exit_group.empty()
 
+    print(level)
+
     # Load in level data and create world
-    if path.exists(f'levels/level{level}_data'):
-        pickle_in = open(f'levels/level{level}_data', 'rb')
+    """  if path.exists(f'levels/level{level}_data'):
+        pickle_in = open(f'levels/level{level}_data', 'rb') """
         
-        world_data = pickle.load(pickle_in)
+    world_data = LEVEL_1_MAP_DIMENSIONS
     world = World(world_data)
 
     return world
@@ -133,12 +135,6 @@ while(run == True):
                     world = reset_level(level)
                     player.reset(88,screen_height - 102)
                     game_over = 0
-
-
-                
-        # draw_grid() # malha 100x100 - Alterar em title_size == 100 para = 10x10.
-
-        # print(world.tile_list)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
