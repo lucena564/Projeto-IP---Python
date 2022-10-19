@@ -1,23 +1,21 @@
 import os
 import pygame
-from constants.WorldDataConstants import WorldDataConstants
 from constants.BackgroundConstants import BackgroundConstants
 from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
 from classes.lava.Lava import Lava
 
-tile_size = WorldDataConstants.TILE_SIZE
+tile_size = BackgroundConstants.TILE_SIZE
 
 blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
+screen = BackgroundConstants.SCREEN
 class World():
     def __init__(self, world_data):
         self.tile_list = []
 
-        # Load images
         dirt_img = pygame.image.load(os.path.join('assets', 'background', 'dirt.png'))
         grass_img = pygame.image.load(os.path.join('assets', 'background','grass.png'))
-        # lava_img = pygame.image.load('img/lava.png')
 
         row_count = 0
         for row in world_data:
@@ -58,5 +56,5 @@ class World():
 
     def draw(self):
         for tile in self.tile_list:
-            BackgroundConstants.SCREEN.blit(tile[0], tile[1])
-            pygame.draw.rect(BackgroundConstants.SCREEN,(255,255,255), tile[1], 2)
+            screen.blit(tile[0], tile[1])
+            pygame.draw.rect(screen,(255,255,255), tile[1], 2)
