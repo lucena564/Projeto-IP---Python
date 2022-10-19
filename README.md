@@ -11,7 +11,7 @@
   <p align="center">
     CIn UFPE | October 2022 | Introduction to programming (IP)
     <br />
-    <a href="https://github.com/ditthales/RoboIC"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/lucena564/Projeto-IP---Python"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -45,6 +45,9 @@
 
 <td align="center"><a href="https://github.com/thaisnevest"><img src="https://avatars.githubusercontent.com/u/56198772?v=4" width="100px;" alt=""/><br /><sub><b>Thaís Neves</b></sub></a><br/></td>
 </tr>
+  <td align="center"><a href="https://github.com/miriamrms"><img src="https://avatars.githubusercontent.com/u/108680161?v=4" width="100px;" alt=""/><br /><sub><b>Miriam</b></sub></a><br/></td>
+  <td align="center"><a href="https://github.com/Isaiaspereiraes"><img src="https://avatars.githubusercontent.com/u/108680376?v=4" width="100px;" alt=""/><br /><sub><b>Isaias Pereira</b></sub></a><br/></td>
+ </tr>
  </table>
 
 ### Built With
@@ -68,6 +71,12 @@
 
 /sound
 > Music and sound elements
+
+/Gameplay.py
+> Game flow code 
+
+/Game.py
+> Main file
 
 ## Installation
 
@@ -105,6 +114,8 @@ Any contributions you make are greatly appreciated.
 - Stela Nascimento - snon@cin.ufpe.br
 - Shellyda Barbosa - sfsb2@cin.ufpe.br
 - Thaís Neves - tns2@cin.ufpe.br
+- Miriam - mrms@cin.ufpe.br
+- Isaias Pereira - ips2@cin.ufpe.br
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
