@@ -1,7 +1,7 @@
 import pygame
 from pygame.locals import *
-import pickle
-from os import path
+# import pickle
+# from os import path
 
 pygame.init()
 
@@ -33,20 +33,20 @@ def draw_grid(): # Just to call the lines
         pygame.draw.line(screen, (255,255,255), (0,line*tile_size), (screen_width, line*tile_size))
         pygame.draw.line(screen, (255,255,255), (line*tile_size,0), (line*tile_size, screen_height))
 
-def reset_level(level):
-    player = Player(88,screen_height - 102)
-    blob_group.empty()
-    lava_group.empty()
-    exit_group.empty()
+# def reset_level(level):
+#     player = Player(88,screen_height - 102)
+#     blob_group.empty()
+#     lava_group.empty()
+#     exit_group.empty()
 
-    # Load in level data and create world
-    if path.exists(f'level{level}_data'):
-        pickle_in = open(f'level{level}_data', 'rb')
+#     # Load in level data and create world
+#     if path.exists(f'level{level}_data'):
+#         pickle_in = open(f'level{level}_data', 'rb')
         
-        world_data = pickle.load(pickle_in)
-    world = World(world_data)
+#         world_data = pickle.load(pickle_in)
+#     world = World(world_data)
 
-    return world
+#     return world
 
 
 class Button():
@@ -67,7 +67,8 @@ class Button():
         if self.rect.collidepoint(pos) == True:
             # print('O mouse está em cima do botão.')
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False: # [0] indica botão esquerdo do mouse.
-                action = True # print('Botão direito clicado.')
+                # print('Botão direito clicado.')
+                action = True 
                 self.clicked = True
 
         # Sem essa função iria dar spam click.
@@ -81,31 +82,6 @@ class Button():
 class Player():
     def __init__(self, x, y):
         self.reset(x,y)
-        # self.images_right = []
-        # self.images_left = []
-        # self.index = 0
-        # self.counter = 0
-        # for num in range(0,5):
-        #     img_right = pygame.image.load(f'img/cat/right{num}.png')
-        #     # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
-        #     img_right = pygame.transform.scale(img_right,(40,45))
-        #     img_left = pygame.transform.flip(img_right,True, False)
-        #     # img_left = pygame.image.load(f'img/cat/left{num}.png')
-        #     # img_left = pygame.transform.scale(img_left,(135,85))
-            
-        #     self.images_right.append(img_right)
-        #     self.images_left.append(img_left)
-
-        # self.dead_image = pygame.image.load(r'img\ghost.png')
-        # self.image = self.images_right[self.index]
-        # self.rect = self.image.get_rect()
-        # self.rect.x = x
-        # self.rect.y = y
-        # self.width = self.image.get_width()
-        # self.height = self.image.get_height()
-        # self.vel_y = 0
-        # self.jumped = False
-        # self.direction = 0
 
     def update(self, game_over):
         dx = 0
@@ -220,7 +196,7 @@ class Player():
         self.index = 0
         self.counter = 0
         for num in range(0,5):
-            img_right = pygame.image.load(f'img/cat/right{num}.png')
+            img_right = pygame.image.load(f'img/cat/right{num}_.png')
             # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
             img_right = pygame.transform.scale(img_right,(40,45))
             img_left = pygame.transform.flip(img_right,True, False)
@@ -245,7 +221,6 @@ class Player():
 class World():
     def __init__(self, data):
         self.tile_list = []
-
 
         # Load images
         dirt_img = pygame.image.load('img/dirt.png')
@@ -340,28 +315,73 @@ class Exit(pygame.sprite.Sprite):
         self.move_direction = 1
         self.move_counter = 0    
 
+world_data = [
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 1], 
+[1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 2, 2, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 7, 0, 5, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 1], 
+[1, 7, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 7, 0, 0, 0, 0, 1], 
+[1, 0, 2, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 2, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 2, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 2, 2, 2, 2, 1], 
+[1, 0, 0, 0, 0, 0, 2, 2, 2, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1], 
+[1, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+[1, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+[1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+]
 
 # world_data = [
 # [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
 # [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 1], 
-# [1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 2, 2, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 7, 0, 5, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 1], 
-# [1, 7, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 7, 0, 0, 0, 0, 1], 
-# [1, 0, 2, 0, 0, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 2, 0, 0, 4, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 1], 
 # [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 2, 0, 1], 
 # [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
-# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 2, 2, 2, 2, 1], 
-# [1, 0, 0, 0, 0, 0, 2, 2, 2, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1], 
-# [1, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
-# [1, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
-# [1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 7, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 7, 0, 0, 0, 2, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 2, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 2, 2, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 7, 7, 7, 0, 0, 0, 1], 
+# [1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 7, 7, 7, 7, 0, 0, 1], 
+# [1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 7, 7, 7, 7, 7, 0, 1], 
+# [1, 1, 1, 1, 6, 6, 6, 1, 3, 0, 1, 1, 1, 7, 7, 7, 7, 7, 8, 1], 
+# [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1]
+# ]
+        
+# world_data = [
+# [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2, 1, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2, 1, 1, 1], 
+# [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 2, 1, 1, 1, 1], 
+# [1, 7, 7, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 2, 1, 1, 1, 1, 1], 
+# [1, 2, 2, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 1, 1, 1], 
+# [1, 1, 1, 1, 6, 1, 6, 1, 6, 1, 6, 1, 6, 1, 1, 1, 1, 1, 1, 1]
 # ]
 
 player = Player(88,screen_height - 102)
@@ -371,13 +391,13 @@ lava_group = pygame.sprite.Group()
 exit_group = pygame.sprite.Group()
 
 # Load in lvl data and create world
-if path.exists(f'level{level}_data'):
-    pickle_in = open(f'level{level}_data', 'rb')
+# if path.exists(f'level{level}_data'):
+#     pickle_in = open(f'level{level}_data', 'rb')
     
-    world_data = pickle.load(pickle_in)
+#     world_data = pickle.load(pickle_in)
 world = World(world_data)
 
-# Create buttons
+# Create buttons (Apenas a parte visual)
 restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restart_img)
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
@@ -419,8 +439,8 @@ while(run == True):
             if restart_button.draw() == True:
                 # Precisei criar uma classe reset no player
                 # para o botão do reset funcionar.
-                world_data = []
-                world = reset_level(level)
+                # world_data = []
+                # world = reset_level(level)
                 player.reset(88,screen_height - 102)
                 game_over = 0
 
@@ -430,8 +450,8 @@ while(run == True):
             level += 1
             if level <= max_levels:
                 # Reset level
-                world_data = []
-                world = reset_level(level)
+                # world_data = []
+                # world = reset_level(level)
                 player.reset(88,screen_height - 102)
                 game_over = 0
 
@@ -445,7 +465,6 @@ while(run == True):
                     game_over = 0
 
 
-                
         # draw_grid() # malha 100x100 - Alterar em title_size == 100 para = 10x10.
 
         # print(world.tile_list)
@@ -455,6 +474,5 @@ while(run == True):
             run = False
 
     pygame.display.update()
-
 
 pygame.quit()
