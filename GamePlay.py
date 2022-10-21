@@ -7,7 +7,7 @@ from classes.button.Button import Button
 from classes.player.Player import Player
 from classes.world.World import World, blob_group, lava_group, exit_group
 
-from levels.levels_data import LEVEL_1_MAP_DIMENSIONS
+from levels.levels_data import *
 
 pygame.init()
 
@@ -40,11 +40,12 @@ restart_button = Button(screen_width // 2 - 50, screen_height // 2 + 100, restar
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
-""" if path.exists(f'levels/level{level}_data'):
+"""if path.exists(f'levels/level{level}_data'):
     pickle_in = open(f'levels/level{level}_data', 'rb')
     
-    world_data = pickle.load(pickle_in) """
-    
+    world_data = pickle.load(pickle_in)"""
+
+level_ = 0
 world_data = LEVEL_1_MAP_DIMENSIONS
 world = World(world_data)
 
@@ -135,6 +136,7 @@ while(run == True):
                     world = reset_level(level)
                     player.reset(88,screen_height - 102)
                     game_over = 0
+                    level_ += 1
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
