@@ -1,13 +1,11 @@
 import os
 import pygame
 from constants.BackgroundConstants import BackgroundConstants
-from classes.world.World import World
+from classes.world.World import World, blob_group, lava_group, exit_group
 
 screen = BackgroundConstants.SCREEN
 
 screen_height = BackgroundConstants.SCREEN_HEIGHT
-
-blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 
 class Player():
