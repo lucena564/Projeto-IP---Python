@@ -13,31 +13,6 @@ blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(
 class Player():
     def __init__(self, x, y):
         self.reset(x,y)
-        # self.images_right = []
-        # self.images_left = []
-        # self.index = 0
-        # self.counter = 0
-        # for num in range(0,5):
-        #     img_right = pygame.image.load(f'img/cat/right{num}.png')
-        #     # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
-        #     img_right = pygame.transform.scale(img_right,(40,45))
-        #     img_left = pygame.transform.flip(img_right,True, False)
-        #     # img_left = pygame.image.load(f'img/cat/left{num}.png')
-        #     # img_left = pygame.transform.scale(img_left,(135,85))
-            
-        #     self.images_right.append(img_right)
-        #     self.images_left.append(img_left)
-
-        # self.dead_image = pygame.image.load(r'img\ghost.png')
-        # self.image = self.images_right[self.index]
-        # self.rect = self.image.get_rect()
-        # self.rect.x = x
-        # self.rect.y = y
-        # self.width = self.image.get_width()
-        # self.height = self.image.get_height()
-        # self.vel_y = 0
-        # self.jumped = False
-        # self.direction = 0
 
     def update(self, game_over, world_data):
         dx = 0
@@ -127,7 +102,6 @@ class Player():
                 game_over = 1
 
                 
-                    
             # Update player coordinates
             self.rect.x += dx
             self.rect.y += dy
@@ -152,7 +126,7 @@ class Player():
         self.index = 0
         self.counter = 0
         for num in range(0,5):
-            img_right = pygame.image.load(f'assets/characters/cat/right{num}.png')
+            img_right = pygame.image.load(f'assets/characters/cat/right{num}_.png')
             # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
             img_right = pygame.transform.scale(img_right,(40,45))
             img_left = pygame.transform.flip(img_right,True, False)
