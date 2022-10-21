@@ -7,7 +7,7 @@ class Enemy(pygame.sprite.Sprite): # Esse parametro é para estilo de jogo sprit
     # Dentro desse método 'pygame.sprite.Sprite' já temos um método "draw" p/ aparecer o nosso inimigo.
     def __init__(self, x, y): 
         pygame.sprite.Sprite.__init__(self) # É uma função do pygame para inimigos.
-        self.image = pygame.image.load(r'C:\Users\FormatMicro\Desktop\House of cats\Projeto-IP---Python\assets\enemies\blob\blob.png') # Trocar por um cachorro
+        self.image = pygame.image.load(r'assets\enemies\blob\blob.png') # Trocar por um cachorro
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
