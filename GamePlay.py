@@ -46,7 +46,7 @@ exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
     world_data = pickle.load(pickle_in)"""
 
 level_ = 0
-world_data = LEVEL_1_MAP_DIMENSIONS
+world_data = LEVEL_3_MAP_DIMENSIONS
 world = World(world_data)
 
 player = Player(88,screen_height - 102)
@@ -71,7 +71,7 @@ def reset_level(level):
     """  if path.exists(f'levels/level{level}_data'):
         pickle_in = open(f'levels/level{level}_data', 'rb') """
         
-    world_data = LEVEL_1_MAP_DIMENSIONS
+    world_data = LEVEL_3_MAP_DIMENSIONS
     world = World(world_data)
 
     return world
