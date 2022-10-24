@@ -106,7 +106,7 @@ class Player():
 
         elif game_over == -1:
             self.image = self.dead_image
-            if self.rect.y > 200:
+            if self.rect.y > 50:
                 self.rect.y -= 5
         
         # if self.rect.bottom > screen_height:
@@ -134,7 +134,7 @@ class Player():
             self.images_right.append(img_right)
             self.images_left.append(img_left)
 
-        self.dead_image = pygame.image.load(r'assets\characters\ghost.png')
+        self.dead_image = pygame.image.load(r'assets/characters/cat_ghost2.png')
         self.image = self.images_right[self.index]
         self.rect = self.image.get_rect()
         self.rect.x = x

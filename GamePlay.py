@@ -120,6 +120,7 @@ while(run == True):
         # If player has completed the lvl
         if game_over == 1:
             # Reset game and go to next level
+
             level += 1
             if level <= max_levels:
                 # Reset level

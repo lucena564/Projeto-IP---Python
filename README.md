@@ -98,6 +98,11 @@
 ```sh
   python3 Game.py 
 ```
+```sh
+  python Game.py 
+```
+#### Use "python Game.py" only if the computer contains different versions of python
+
 ## Contributing
 Any contributions you make are greatly appreciated.
 
