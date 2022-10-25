@@ -1,13 +1,17 @@
+# Classe mais importante, precisa ser um import global.
+# Todas as novas classes são instaciadas aqui.
+
 import os
 import pygame
 from constants.BackgroundConstants import BackgroundConstants
 from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
 from classes.lava.Lava import Lava
+from classes.coin.Coin import Coin
 
 tile_size = BackgroundConstants.TILE_SIZE
 
-blob_group, lava_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
+blob_group, lava_group, coin_group, exit_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen = BackgroundConstants.SCREEN
 class World():
@@ -45,6 +49,10 @@ class World():
                 if tile == 6:
                     lava = Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2))
                     lava_group.add(lava)
+
+                if tile == 7:
+                    coin = Coin(col_count * tile_size + (tile_size // 2), row_count * tile_size + (tile_size // 2))
+                    coin_group.add(coin)
 
                 if tile == 8:
                     exit_action = Exit(col_count * tile_size, row_count * tile_size - (tile_size // 2))

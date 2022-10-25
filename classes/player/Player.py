@@ -1,12 +1,22 @@
-import os
+from os import path
 import pygame
+from pygame import mixer
 from constants.BackgroundConstants import BackgroundConstants
-from classes.world.World import World, blob_group, lava_group, exit_group
+from classes.world.World import World, blob_group, lava_group, exit_group, coin_group
 
 screen = BackgroundConstants.SCREEN
 
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
+pygame.mixer.pre_init(44100, -16, 2, 512) # Peguei essa config na net para rodar a musica direitinho.
+mixer.init()
+
+jump_fx = pygame.mixer.Sound(path.join('sound', 'jump.wav'))
+jump_fx.set_volume(0.4)
+game_over_fx = pygame.mixer.Sound(path.join('sound', 'game_over.wav'))
+game_over_fx.set_volume(0.2)
+door_fx = pygame.mixer.Sound(path.join('sound', 'Ta-Da-original.wav'))
+door_fx.set_volume(0.1)
 
 class Player():
     def __init__(self, x, y):
@@ -21,6 +31,7 @@ class Player():
             # Get keypresses
             key = pygame.key.get_pressed()
             if key[pygame.K_UP] and self.jumped == False and self.in_air == False:
+                jump_fx.play() # Pensar como será esse import
                 self.vel_y = -15 # Negative move to up
                 self.jumped = True
             
@@ -87,16 +98,19 @@ class Player():
 
             # Check for Collision with enemies
             if pygame.sprite.spritecollide(self, blob_group, False):
+                game_over_fx.play()
                 game_over = -1
                 # print(game_over)
             
             # Check for Collision with lava
             if pygame.sprite.spritecollide(self, lava_group, False):
+                game_over_fx.play()
                 game_over = -1
                 # print(game_over)
 
             # Check for Collision with exit
             if pygame.sprite.spritecollide(self, exit_group, False):
+                door_fx.play()
                 game_over = 1
 
                 
