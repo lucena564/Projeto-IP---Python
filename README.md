@@ -114,7 +114,7 @@ Any contributions you make are greatly appreciated.
 
 ## Contact
 - Antônio Lucena - avbl@cin.ufpe.br
-- Lucas Torres - ljat@cin.ufpe.br
+- Lucas Jorge Torres - ljat@cin.ufpe.br
 - Stela Nascimento - snon@cin.ufpe.br
 - Shellyda Barbosa - sfsb2@cin.ufpe.br
 - Thaís Neves - tns2@cin.ufpe.br
