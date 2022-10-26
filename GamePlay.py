@@ -104,7 +104,7 @@ def reset_level(level):
     # print(level)
         
     world_data = next_level_array[level][0]
-    image_name = next_level_array[2][level_]
+    image_name = next_level_array[level][2]
     world = World(world_data, image_name)
 
     return world
