@@ -139,6 +139,7 @@ restaurant_img = pygame.image.load(path.join('assets', 'background','restaurant.
 
 next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_4_MAP_DIMENSIONS, bg_img, ''), (LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
 
+
 # next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
 
 
