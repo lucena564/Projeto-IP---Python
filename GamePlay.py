@@ -47,10 +47,10 @@ pygame.display.set_caption('House of cats')
 tile_size = BackgroundConstants.TILE_SIZE
 
 # Load images
-sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
-# bg_img = pygame.image.load(path.join('assets', 'background', 'sky_coin.jpg'))
-bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
-lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+# sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
+# # bg_img = pygame.image.load(path.join('assets', 'background', 'sky_coin.jpg'))
+# bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
+# lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
 
 restart_img = pygame.image.load(path.join('assets', 'menu','restart_btn.png'))
 start_img = pygame.image.load(path.join('assets', 'menu','start_btn.png'))
@@ -72,13 +72,14 @@ coin_fx.set_volume(0.5)
 # door_fx.set_volume(0.5)
 
 # Creating a static coin for score - Had to import Coin class.
-score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 50) 
+score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0) 
 coin_group.add(score_coin)
 
 
 level_ = 0
-world_data = next_level_array[level_]
-world = World(world_data)
+world_data = next_level_array[0][level_]
+image_name = next_level_array[2][level_]
+world = World(world_data, image_name)
 
 player = Player(88,screen_height - 102)
 
@@ -102,21 +103,24 @@ def reset_level(level):
 
     # print(level)
         
-    world_data = next_level_array[level]
-    world = World(world_data)
+    world_data = next_level_array[level][0]
+    image_name = next_level_array[2][level_]
+    world = World(world_data, image_name)
 
     return world
 
 run = True
 
+mapa_skip = 1
 # All game run here.
 while(run == True):
     
     clock.tick(fps)
 
     # Tela base do jogo. Colocaremos algumas condições no futuro para o plano de fundo mudar com o nível.
-    screen.blit(bg_img, (0,0))
-    screen.blit(sun_img, (100,100))
+    # screen.blit(bg_img, (0,0))
+    # screen.blit(sun_img, (100,100))
+    screen.blit(next_level_array[level_][1], (0,0))
 
     if main_menu == True:
         if exit_button.draw() == True:
@@ -128,6 +132,7 @@ while(run == True):
     else:
 
         world.draw()
+        draw_text(' X ' + str(score), font_score, black , tile_size + 40, 17)
 
         if game_over == 0:
             blob_group.update()
@@ -144,7 +149,7 @@ while(run == True):
                 # else:
                 #     print(f'Moedas coletadas = {score}')     
 
-            draw_text('X ' + str(score), font_score, black , tile_size + 40, 67)
+            # draw_text(' X ' + str(score), font_score, black , tile_size + 40, 17)
         
         blob_group.draw(screen)
         lava_group.draw(screen)
@@ -184,7 +189,7 @@ while(run == True):
                     player.reset(88,screen_height - 102)
                     game_over = 0
             
-            except: # Index out of the range if get win all lvls, so, dicided to restart.
+            except Exception as e: # Index out of the range if get win all lvls, so, dicided to restart.
                     main_menu == True
                     level_ = 0
                     world = reset_level(level_)
@@ -195,6 +200,7 @@ while(run == True):
                     game_over = 0
                     print('Parabéns!!!!!!! Você ganhooou!!') # Podemos fazer um append para
                     # o primeiro level ser uma tela de parabéns!
+                    print(e)
 
             else:
                 

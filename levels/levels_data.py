@@ -1,3 +1,6 @@
+from os import path
+import pygame
+
 LEVEL_1_MAP_DIMENSIONS = [
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
@@ -114,8 +117,13 @@ LEVEL_5_MAP_DIMENSIONS = [
 ]
 
 
+sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
+bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
+lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+alien_test = pygame.image.load(path.join('assets', 'background', 'alien_teste.png'))
+teste = pygame.image.load(path.join('assets', 'background','teste.png'))
 
-next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
+next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, lib_img, ''), (LEVEL_3_MAP_DIMENSIONS, bg_img, ''), (LEVEL_4_MAP_DIMENSIONS, bg_img, ''),(LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
 
 # Sugestão:
 
