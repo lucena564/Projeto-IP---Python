@@ -19,13 +19,17 @@ class World():
     def __init__(self, world_data, image_name):
         self.tile_list = []
 
+        # Dirt
         dirt_img = pygame.image.load(os.path.join('assets', 'background', 'dirt.png'))
         dirt_alien_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_alien.png'))
         dirt_candy_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_candy.png'))
+        dirt_game_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_game.png'))
 
+        # Grass
         grass_img = pygame.image.load(os.path.join('assets', 'background','grass.png'))
         grass_alien_img = pygame.image.load(os.path.join('assets', 'background','grass_alien.png'))
         grass_candy_img = pygame.image.load(os.path.join('assets', 'background','grass_candy.png'))
+        grass_game_img = pygame.image.load(os.path.join('assets', 'background','grass_game.png'))
 
         row_count = 0
         for row in world_data:
@@ -42,6 +46,14 @@ class World():
 
                     elif image_name == 'candy':
                         img = pygame.transform.scale(dirt_candy_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+                    
+                    elif image_name == 'gameroom':
+                        img = pygame.transform.scale(dirt_game_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
@@ -67,6 +79,14 @@ class World():
 
                     elif image_name == 'candy':
                         img = pygame.transform.scale(grass_candy_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+
+                    elif image_name == 'gameroom':
+                        img = pygame.transform.scale(grass_game_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
