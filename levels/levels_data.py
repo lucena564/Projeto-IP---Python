@@ -77,6 +77,8 @@ lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
 alien_test = pygame.image.load(path.join('assets', 'background', 'alien_teste.png'))
 teste = pygame.image.load(path.join('assets', 'background','teste.png'))
 
+# Precisamos por os lvls de Stela
+
 next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, lib_img, ''), (LEVEL_3_MAP_DIMENSIONS, alien_test, 'alien')]
 
 # Sugestão:
