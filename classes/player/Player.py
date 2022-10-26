@@ -70,7 +70,7 @@ class Player():
                 if self.direction == -1:
                     self.image = self.images_left[self.index]
             
-            # Add gravity
+            # Gravity
             self.vel_y += 1
             if self.vel_y > 10:
                 self.vel_y = 10
@@ -113,7 +113,6 @@ class Player():
                 door_fx.play()
                 game_over = 1
 
-                
             # Update player coordinates
             self.rect.x += dx
             self.rect.y += dy
@@ -122,13 +121,9 @@ class Player():
             self.image = self.dead_image
             if self.rect.y > 50:
                 self.rect.y -= 5
-        
-        # if self.rect.bottom > screen_height:
-        #     self.rect.bottom = screen_height
 
         # Draw player on to screen
         screen.blit(self.image, self.rect)
-        # pygame.draw.rect(screen,(255,255,255), self.rect,1)
 
         return game_over
     
@@ -139,12 +134,8 @@ class Player():
         self.counter = 0
         for num in range(0,5):
             img_right = pygame.image.load(f'assets/characters/cat/right{num}_.png')
-            # img_right = pygame.transform.scale(img_right,(135,85)) # img_right = pygame.transform.scale(img_right,(75,65))
             img_right = pygame.transform.scale(img_right,(40,45))
             img_left = pygame.transform.flip(img_right,True, False)
-            # img_left = pygame.image.load(f'img/cat/left{num}.png')
-            # img_left = pygame.transform.scale(img_left,(135,85))
-            
             self.images_right.append(img_right)
             self.images_left.append(img_left)
 
