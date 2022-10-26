@@ -119,7 +119,7 @@ Any contributions you make are greatly appreciated.
 - Shellyda Barbosa - sfsb2@cin.ufpe.br
 - Thaís Neves - tns2@cin.ufpe.br
 - Miriam - mrms@cin.ufpe.br
-- Isaias Pereira - ips2@cin.ufpe.br
+- Isaias Pereira da Silva - ips2@cin.ufpe.br
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
