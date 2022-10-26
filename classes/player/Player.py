@@ -120,7 +120,7 @@ class Player():
 
         elif game_over == -1:
             self.image = self.dead_image
-            if self.rect.y > 50:
+            if self.rect.y > -110:
                 self.rect.y -= 5
         
         # if self.rect.bottom > screen_height:
