@@ -78,7 +78,8 @@ coin_group.add(score_coin)
 
 level_ = 0
 world_data = next_level_array[0][level_]
-world = World(world_data)
+image_name = next_level_array[2][level_]
+world = World(world_data, image_name)
 
 player = Player(88,screen_height - 102)
 
@@ -102,8 +103,9 @@ def reset_level(level):
 
     # print(level)
         
-    world_data = next_level_array[0][level]
-    world = World(world_data)
+    world_data = next_level_array[level][0]
+    image_name = next_level_array[2][level_]
+    world = World(world_data, image_name)
 
     return world
 
