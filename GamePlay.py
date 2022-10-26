@@ -104,7 +104,11 @@ def reset_level(level):
     # print(level)
         
     world_data = next_level_array[level][0]
+<<<<<<< HEAD
     image_name = next_level_array[2][level_]
+=======
+    image_name = next_level_array[level][2]
+>>>>>>> 07cf8b997f87794e59c19a5c844381ae30008239
     world = World(world_data, image_name)
 
     return world
