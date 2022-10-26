@@ -50,7 +50,7 @@ tile_size = BackgroundConstants.TILE_SIZE
 # sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
 # # bg_img = pygame.image.load(path.join('assets', 'background', 'sky_coin.jpg'))
 # bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
-# lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+# lib_img = pygame.image.load(path.join('assets', 'background','library.png'))
 
 restart_img = pygame.image.load(path.join('assets', 'menu','restart_btn.png'))
 start_img = pygame.image.load(path.join('assets', 'menu','start_btn.png'))

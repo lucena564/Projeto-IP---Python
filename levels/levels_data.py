@@ -119,9 +119,19 @@ LEVEL_5_MAP_DIMENSIONS = [
 
 sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
 bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
-lib_img = pygame.image.load(path.join('assets', 'background','library2.png'))
+lib_img = pygame.image.load(path.join('assets', 'background','library.png'))
 alien_test = pygame.image.load(path.join('assets', 'background', 'alien_teste.png'))
 teste = pygame.image.load(path.join('assets', 'background','teste.png'))
+bedroom_img = pygame.image.load(path.join('assets', 'background','bedroom.jpg'))
+booksroom_img = pygame.image.load(path.join('assets', 'background','booksroom.jpg'))
+candy_img = pygame.image.load(path.join('assets', 'background','candy.jpg'))
+dark_img = pygame.image.load(path.join('assets', 'background','dark.jpg'))
+gameroom_img = pygame.image.load(path.join('assets', 'background','gameroom.jpg'))
+garden_img = pygame.image.load(path.join('assets', 'background','garden.jpg'))
+home_img = pygame.image.load(path.join('assets', 'background','home.jpg'))
+prison_img = pygame.image.load(path.join('assets', 'background','prison.jpg'))
+restaurant_img = pygame.image.load(path.join('assets', 'background','restaurant.jpg'))
+
 
 # Precisamos por os lvls de Stela
 
