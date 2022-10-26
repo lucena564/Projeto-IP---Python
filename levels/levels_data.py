@@ -110,7 +110,7 @@ LEVEL_5_MAP_DIMENSIONS = [
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 7, 0, 0, 0, 0, 2, 0, 1], 
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], 
 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 2, 2, 2, 2, 1], 
-[1, 0, 0, 0, 0, 0, 2, 2, 2, 6, 6, 6, 6, 6, 1, 1, 1, 1, 1, 1], 
+[1, 0, 0, 0, 0, 0, 2, 2, 2, 9, 9, 9, 9, 9, 1, 1, 1, 1, 1, 1], 
 [1, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
 [1, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
 [1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -137,10 +137,10 @@ restaurant_img = pygame.image.load(path.join('assets', 'background','restaurant.
 
 # next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, lib_img, ''), (LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
 
-next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_3_MAP_DIMENSIONS, restaurant_img, 'gameroom'), (LEVEL_4_MAP_DIMENSIONS, booksroom_img, ''), (LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
+next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_4_MAP_DIMENSIONS, bg_img, ''), (LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
+
 
 # next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
-
 
 
 
