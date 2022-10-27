@@ -161,7 +161,7 @@ while(run == True):
         # If player died
         if game_over == -1:
             # game_over_fx.play()
-            draw_text('Miaaaaaaaau!!!', font_miau, blue, (screen_width // 2) - 140, screen_height // 2)
+            draw_text('Miaaaaaaaau!!!', font_miau, blue, (screen_width // 2) - 300, screen_height // 2)
             if restart_button.draw() == True:
                 # Precisei criar uma classe reset no player
                 # para o botão do reset funcionar.
