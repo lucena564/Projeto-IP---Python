@@ -10,9 +10,12 @@ class Sushi(pygame.sprite.Sprite):
     def __init__(self,x,y): 
         pygame.sprite.Sprite.__init__(self)
         img = pygame.image.load(path.join('assets','collectables','big_sushi.png'))
-        self.image = pygame.transform.scale(img, (tile_size // 2, tile_size // 2))
+        self.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))
         self.rect = self.image.get_rect()
-        self.rect.center = (x, y)
+        self.rect.x = x
+        self.rect.y = y
+        self.move_direction = 1
+        self.move_counter = 0  
 
     def update(self):
         self.rect.y += self.move_direction
