@@ -2,7 +2,7 @@ from os import path
 import pygame
 from pygame import mixer
 from constants.BackgroundConstants import BackgroundConstants
-from classes.world.World import World, blob_group, lava_group, exit_group, coin_group
+from classes.world.World import blob_group, lava_group, exit_group, coin_group, sushi_power_group
 
 screen = BackgroundConstants.SCREEN
 
@@ -30,9 +30,14 @@ class Player():
         if game_over == 0:
             # Get keypresses
             key = pygame.key.get_pressed()
+
             if key[pygame.K_UP] and self.jumped == False and self.in_air == False:
                 jump_fx.play() # Pensar como será esse import
-                self.vel_y = -15 # Negative move to up
+                if pygame.sprite.spritecollide(self, sushi_power_group, False):
+                    for _duration in range(10):
+                     self.vel_y = -30 # Negative move to up
+                else:
+                 self.vel_y = -15
                 self.jumped = True
             
             if key[pygame.K_UP] == False:
@@ -97,17 +102,17 @@ class Player():
                         self.in_air = False
 
             # Check for Collision with enemies
-            if pygame.sprite.spritecollide(self, blob_group, False):
+            if pygame.sprite.spritecollide(self, blob_group, False) and not pygame.sprite.spritecollide(self, sushi_power_group, False):
                 game_over_fx.play()
                 game_over = -1
                 # print(game_over)
             
             # Check for Collision with lava
-            if pygame.sprite.spritecollide(self, lava_group, False):
+            if pygame.sprite.spritecollide(self, lava_group, False) and not pygame.sprite.spritecollide(self, sushi_power_group, False):
                 game_over_fx.play()
                 game_over = -1
                 # print(game_over)
-
+            
             # Check for Collision with exit
             if pygame.sprite.spritecollide(self, exit_group, False):
                 door_fx.play()

@@ -9,7 +9,7 @@ from classes.button.Button import Button
 
 from classes.player.Player import Player
 from classes.coin.Coin import Coin
-from classes.world.World import World, blob_group, lava_group, exit_group, coin_group
+from classes.world.World import World, blob_group, lava_group, exit_group, coin_group, sushi_power_group
 
 from levels.levels_data import *
 
@@ -31,6 +31,7 @@ blue = (0, 0, 255)
 
 fps = 60
 game_over = 0
+player_has_jump_power = False
 main_menu = True
 level = 0
 max_levels = 7
@@ -83,8 +84,6 @@ world = World(world_data, image_name)
 
 player = Player(88,screen_height - 102)
 
-
-
 # lib_img = pygame.transform.scale(lib_img,(1000,1000))
 
 def draw_grid(): # Just to call the lines
@@ -100,6 +99,7 @@ def reset_level(level):
     blob_group.empty()
     lava_group.empty()
     exit_group.empty()
+    sushi_power_group.empty()
 
     # print(level)
         
@@ -136,6 +136,7 @@ while(run == True):
 
         if game_over == 0:
             blob_group.update()
+            sushi_power_group.update()
 
             # Update score
             # Check if a coin has been collected
@@ -154,14 +155,16 @@ while(run == True):
         blob_group.draw(screen)
         lava_group.draw(screen)
         coin_group.draw(screen)
+        sushi_power_group.draw(screen)
         exit_group.draw(screen)
+        
 
         game_over = player.update(game_over, world)
 
         # If player died
         if game_over == -1:
             # game_over_fx.play()
-            draw_text('Miaaaaaaaau!!!', font_miau, blue, (screen_width // 2) - 140, screen_height // 2)
+            draw_text('Miaaaaaaaau!!! >:(', font_miau, red, (screen_width // 2) - 250, screen_height // 2)
             if restart_button.draw() == True:
                 # Precisei criar uma classe reset no player
                 # para o botão do reset funcionar.

@@ -3,6 +3,7 @@
 
 import os
 import pygame
+from classes.sushi.Sushi import Sushi
 from constants.BackgroundConstants import BackgroundConstants
 from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
@@ -12,7 +13,7 @@ from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
 
-blob_group, lava_group, coin_group, exit_group, blue_lava_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
+blob_group, lava_group, coin_group, exit_group, blue_lava_group, sushi_power_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen = BackgroundConstants.SCREEN
 class World():
@@ -122,6 +123,10 @@ class World():
                 if tile == 9:
                     lava = Blue_Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2))
                     lava_group.add(lava)
+                
+                if tile == 10:
+                    sushi = Sushi(col_count * tile_size, row_count * tile_size + (tile_size // 2))
+                    sushi_power_group.add(sushi)
 
                 col_count += 1
             row_count += 1
