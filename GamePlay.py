@@ -35,6 +35,7 @@ player_has_jump_power = False
 main_menu = True
 level = 0
 max_levels = 7
+
 score = 0
 
 
@@ -62,8 +63,9 @@ start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
 # Load sounds
-coin_fx = pygame.mixer.Sound(path.join('sound', 'coin.wav'))
-coin_fx.set_volume(0.5)
+coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
+coin_fx.set_volume(0.3)
+# coin_fx.set_volume(0.5)
      # jump_fx and game_over_fx is defined at Player.py
 # jump_fx = pygame.mixer.Sound(path.join('sound', 'jump.wav'))
 # jump_fx.set_volume(0.5)
@@ -207,7 +209,6 @@ while(run == True):
                     print(e)
 
             else:
-                
                 if restart_button.draw():
                     # level = 1
 
