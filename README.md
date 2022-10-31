@@ -51,59 +51,76 @@
 
 ### Built With
 
-* [ Python 3.0 ](https://www.python.org/download/releases/3.0/)
-* [ Pygame 2.1.2](https://www.pygame.org/wiki/GettingStarted)
+- [ Python 3.0 ](https://www.python.org/download/releases/3.0/)
+- [ Pygame 2.1.2](https://www.pygame.org/wiki/GettingStarted)
 
 ## Files
 
 /assets
+
 > Images separated by category
 
 /classes
+
 > Game elements code base
 
 /constants
+
 > Global constants used into game flow
 
 /levels
+
 > Levels maps data
 
 /sound
+
 > Music and sound elements
 
 /Gameplay.py
-> Game flow code 
+
+> Game flow code
 
 /Game.py
+
 > Main file
 
 ## Installation
 
 1. Clone repo
+
 ```sh
   git clone https://github.com/lucena564/Projeto-IP---Python.git
 ```
+
 2. Install the dependencies
+
 ```sh
   pip install -r requirements.txt
 ```
+
 ```sh
-  pip3 install -r requirements.txt 
+  pip3 install -r requirements.txt
 ```
+
 #### Use pip3 only if the computer contains different versions of python
 
 ## Play
+
 1. In your terminal, go to the root folder
 2. Run the instruction below
+
 ```sh
-  python3 Game.py 
+  python3 Game.py
 ```
+
 ```sh
-  python Game.py 
+  python Game.py
 ```
+
 #### Use "python Game.py" only if the computer contains different versions of python
 
 ## Contributing
+
 Any contributions you make are greatly appreciated.
 
 1. Fork the Project
@@ -113,16 +130,18 @@ Any contributions you make are greatly appreciated.
 5. Open a Pull Request
 
 ## Contact
-- Antônio Lucena - avbl@cin.ufpe.br
-- Lucas Jorge de Araujo Torres - ljat@cin.ufpe.br
-- Stela Nascimento - snon@cin.ufpe.br
-- Shellyda Barbosa - sfsb2@cin.ufpe.br
-- Thaís Neves - tns2@cin.ufpe.br
-- Miriam - mrms@cin.ufpe.br
+
+- Antônio Victor Bezerra Lucena - avbl@cin.ufpe.br
+- Lucas Jorge de Araújo Torres - ljat@cin.ufpe.br
+- Stela Natalie Oliveira Nascimento - snon@cin.ufpe.br
+- Shellyda de Fatima Silva Barbosa - sfsb2@cin.ufpe.br
+- Thaís Neves de Souza- tns2@cin.ufpe.br
+- Miriam Rayane Mendes da Silva - mrms@cin.ufpe.br
 - Isaias Pereira da Silva - ips2@cin.ufpe.br
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
