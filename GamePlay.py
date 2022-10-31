@@ -99,6 +99,7 @@ def reset_level(level):
     blob_group.empty()
     lava_group.empty()
     exit_group.empty()
+    coin_group.empty()
     sushi_power_group.empty()
 
     # print(level)
