@@ -65,8 +65,10 @@ exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
 # Load sounds
 coin_fx = pygame.mixer.Sound(path.join('sound', 'coin.wav'))
+
 coin_fx.set_volume(0.5)
 # jump_fx and game_over_fx is defined at Player.py
+
 # jump_fx = pygame.mixer.Sound(path.join('sound', 'jump.wav'))
 # jump_fx.set_volume(0.5)
 # game_over_fx = pygame.mixer.Sound(path.join('sound', 'game_over.wav'))
