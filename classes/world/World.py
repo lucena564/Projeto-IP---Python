@@ -9,11 +9,12 @@ from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
 from classes.lava.Lava import Lava, Blue_Lava
 from classes.coin.Coin import Coin
+from classes.platform.Platform import Platform
 from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
 
-blob_group, lava_group, coin_group, exit_group, blue_lava_group, sushi_power_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
+blob_group, lava_group, coin_group, exit_group, blue_lava_group, sushi_power_group, platform_group = pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen = BackgroundConstants.SCREEN
 class World():
@@ -106,6 +107,12 @@ class World():
                     blob = Enemy(col_count * tile_size, row_count * tile_size + 15) # argumentos: Depende da coluna * tile_size, o msm p/ linha  
                     
                     blob_group.add(blob)
+                if tile == 4: #horizontal Platform
+                    platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0)
+                    platform_group.add(platform)
+                if tile == 5:   #vertical platform
+                    platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1)
+                    platform_group.add(platform)
 
                 if tile == 6:
                     lava = Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2))

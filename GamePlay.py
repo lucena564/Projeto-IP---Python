@@ -9,7 +9,7 @@ from classes.button.Button import Button
 
 from classes.player.Player import Player
 from classes.coin.Coin import Coin
-from classes.world.World import World, blob_group, lava_group, exit_group, coin_group, sushi_power_group
+from classes.world.World import World, blob_group, lava_group, exit_group, coin_group, sushi_power_group, platform_group
 
 from levels.levels_data import *
 
@@ -109,6 +109,7 @@ def reset_level(level):
     lava_group.empty()
     coin_group.empty()
     exit_group.empty()
+    platform_group.empty()
     coin_group.empty()
     sushi_power_group.empty()
 
@@ -148,6 +149,7 @@ while (run == True):
 
         if game_over == 0:
             blob_group.update()
+            platform_group.update()
             sushi_power_group.update()
 
             # Update score
@@ -166,6 +168,7 @@ while (run == True):
             # draw_text(' X ' + str(score), font_score, black , tile_size + 40, 17)
 
         blob_group.draw(screen)
+        platform_group.draw(screen)
         lava_group.draw(screen)
         coin_group.draw(screen)
         sushi_power_group.draw(screen)
@@ -241,3 +244,6 @@ while (run == True):
 
 
 pygame.quit()
+
+
+
