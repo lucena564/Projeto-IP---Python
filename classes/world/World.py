@@ -28,6 +28,7 @@ class World():
         dirt_game_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_game.png'))
         dirt_book_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_bookroom.png'))
         dirt_prison_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_prison.png'))
+        dirt_garden_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_garden.png'))
 
         # Grass
         grass_img = pygame.image.load(os.path.join('assets', 'background','grass.png'))
@@ -36,6 +37,7 @@ class World():
         grass_game_img = pygame.image.load(os.path.join('assets', 'background','grass_game.png'))
         grass_book_img = pygame.image.load(os.path.join('assets', 'background','grass_bookroom.png'))
         grass_prison_img = pygame.image.load(os.path.join('assets', 'background','grass_prison.png'))
+        grass_garden_img = pygame.image.load(os.path.join('assets', 'background','grass_garden.png'))
 
         row_count = 0
         for row in world_data:
@@ -75,6 +77,13 @@ class World():
                         self.tile_list.append(tile)
                     elif image_name == 'prison':
                         img = pygame.transform.scale(dirt_prison_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+                    elif image_name == 'garden':
+                        img = pygame.transform.scale(dirt_garden_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
@@ -122,6 +131,13 @@ class World():
                         self.tile_list.append(tile)
                     elif image_name == 'prison':
                         img = pygame.transform.scale(grass_prison_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+                    elif image_name == 'garden':
+                        img = pygame.transform.scale(grass_garden_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
