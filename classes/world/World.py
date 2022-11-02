@@ -9,7 +9,7 @@ from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
 from classes.lava.Lava import Lava, Blue_Lava
 from classes.coin.Coin import Coin
-from classes.platform.Platform import Platform
+from classes.platform.Platform import Platform, Book_Platform, Prison_Platform, Garden_Platform
 from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
@@ -156,17 +156,46 @@ class World():
                     blob = Enemy(col_count * tile_size, row_count * tile_size + 15) # argumentos: Depende da coluna * tile_size, o msm p/ linha  
                     
                     blob_group.add(blob)
+
                 if tile == 4: #horizontal Platform
                     platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0)
                     platform_group.add(platform)
                 if tile == 5:   #vertical platform
                     platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1)
                     platform_group.add(platform)
+                
+                #Book
+                if tile == 11: #horizontal Platform
+                    platform = Book_Platform(col_count * tile_size, row_count * tile_size, 1, 0)
+                    platform_group.add(platform)
+                if tile == 12: #vertical platform
+                    platform = Book_Platform(col_count * tile_size, row_count * tile_size, 0, 1)
+                    platform_group.add(platform)
+                
+                #Prison
+                if tile == 13: #horizontal Platform
+                    platform = Prison_Platform(col_count * tile_size, row_count * tile_size, 1, 0)
+                    platform_group.add(platform)
+                if tile == 14: #vertical platform
+                    platform = Prison_Platform(col_count * tile_size, row_count * tile_size, 0, 1)
+                    platform_group.add(platform)
+                
+                #Garden
+                if tile == 15: #horizontal Platform
+                    platform = Garden_Platform(col_count * tile_size, row_count * tile_size, 1, 0)
+                    platform_group.add(platform)
+                if tile == 16: #vertical platform
+                    platform = Garden_Platform(col_count * tile_size, row_count * tile_size, 0, 1)
+                    platform_group.add(platform)
+                
+                
+                
+
 
                 if tile == 6:
                     lava = Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2))
                     lava_group.add(lava)
-
+                
                 if tile == 7:
                     coin = Coin(col_count * tile_size + (tile_size // 2), row_count * tile_size + (tile_size // 2))
                     coin_group.add(coin)
