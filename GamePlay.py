@@ -105,7 +105,9 @@ def reset_level(level):
     sushi_power_group.empty()
 
     # print(level)
-        
+    score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0) 
+    coin_group.add(score_coin)
+
     world_data = next_level_array[level][0]
     image_name = next_level_array[level][2]
     world = World(world_data, image_name)
