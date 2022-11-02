@@ -186,7 +186,7 @@ restaurant_img = pygame.image.load(
     path.join('assets', 'background', 'restaurant.jpg'))
 
 
-# Precisamos por os lvls de Stela
+
 
 # next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, lib_img, ''), (LEVEL_5_MAP_DIMENSIONS, alien_test, 'alien')]
 
