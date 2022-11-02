@@ -2,7 +2,7 @@ from os import path
 import pygame
 from pygame import mixer
 from constants.BackgroundConstants import BackgroundConstants
-from classes.world.World import blob_group, lava_group, exit_group, coin_group, sushi_power_group
+from classes.world.World import blob_group, lava_group, exit_group, coin_group, sushi_power_group, platform_group
 
 screen = BackgroundConstants.SCREEN
 
@@ -26,6 +26,7 @@ class Player():
         dx = 0
         dy = 0
         walk_cooldown = 1
+        col_thresh = 20
 
         if game_over == 0:
             # Get keypresses
@@ -118,6 +119,27 @@ class Player():
                 door_fx.play()
                 game_over = 1
 
+            #Check for collision with Platforms
+            for platform in platform_group:
+                #collision in the x direction
+                if platform.rect.colliderect(self.rect.x + dx, self.rect.y, self.width, self.height):
+                    dx = 0
+                #collision in the y direction
+                if platform.rect.colliderect(self.rect.x, self.rect.y + dy, self.width, self.height):
+                    #check if bellow plataform
+                    if abs((self.rect.top + dy) - platform.rect.bottom) <  col_thresh:
+                        self.vel_y = 0
+                        dy = platform.rect.bottom - self.rect.top
+                    #check if above plataform
+                    elif abs((self.rect.bottom +dy) - platform.rect.top) < col_thresh:
+                        self.rect.bottom = platform.rect.top - 1
+                        self.in_air = False
+                        dy = 0
+                    #move sideways with the platform
+                    if platform.move_x != 0:
+                        self.rect.x += platform.move_direction
+
+
             # Update player coordinates
             self.rect.x += dx
             self.rect.y += dy
@@ -155,3 +177,5 @@ class Player():
         self.jumped = False
         self.direction = 0
         self.in_air = True
+
+
