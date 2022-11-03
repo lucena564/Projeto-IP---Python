@@ -153,7 +153,7 @@ class World():
                         self.tile_list.append(tile)
 
                 if tile == 3: # Para mudarmos o inimigo iremos precisar mexer aqui.
-                    blob = Enemy(col_count * tile_size, row_count * tile_size + 15) # argumentos: Depende da coluna * tile_size, o msm p/ linha  
+                    blob = Enemy(col_count * tile_size, row_count * tile_size + 2) # argumentos: Depende da coluna * tile_size, o msm p/ linha  
                     
                     blob_group.add(blob)
 
