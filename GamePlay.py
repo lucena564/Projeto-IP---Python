@@ -36,6 +36,7 @@ player_has_jump_power = False
 main_menu = True
 level = 0
 max_levels = 7
+num_coins_level = 0
 
 score = 0
 
@@ -83,6 +84,10 @@ coin_group.add(score_coin)
 
 level_ = 0
 world_data = next_level_array[0][level_]
+for line in world_data:
+    for number in line:
+        if number == 7:
+            num_coins_level += 1
 image_name = next_level_array[2][level_]
 world = World(world_data, image_name)
 
@@ -159,6 +164,8 @@ while (run == True):
             if pygame.sprite.spritecollide(player, coin_group, True):
                 coin_fx.play()
                 score += 1
+                if (score == num_coins_level):
+                    player.collected_all_coins = True
 
                 # if score == 1:
                 #     print(f'Moeda coletada = {score}')
@@ -202,6 +209,12 @@ while (run == True):
                 if level_ <= max_levels:
                     # Reset level
                     # world_data = []
+                    num_coins_level = 0
+                    actual_level = next_level_array[level_][0]
+                    for line in actual_level:
+                        for number in line:
+                            if number == 7:
+                                num_coins_level += 1
                     world = reset_level(level_)
 
                     score = 0  # Deletar depois se colocarmos um contador de moeda
@@ -213,6 +226,12 @@ while (run == True):
             except Exception as e:
                 main_menu == True
                 level_ = 0
+                num_coins_level = 0
+                actual_level = next_level_array[level_][0]
+                for line in actual_level:
+                    for number in line:
+                        if number == 7:
+                            num_coins_level += 1
                 world = reset_level(level_)
 
                 score = 0
@@ -228,7 +247,12 @@ while (run == True):
 
                 if restart_button.draw():
                     # level = 1
-
+                    num_coins_level = 0
+                    actual_level = next_level_array[level_][0]
+                    for line in actual_level:
+                        for number in line:
+                            if number == 7:
+                                num_coins_level += 1
                     world = reset_level(level_)
 
                     score = 0  # Deletar depois se colocarmos um contador de moeda
@@ -245,6 +269,3 @@ while (run == True):
 
 
 pygame.quit()
-
-
-

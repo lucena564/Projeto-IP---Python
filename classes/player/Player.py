@@ -8,7 +8,8 @@ screen = BackgroundConstants.SCREEN
 
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
-pygame.mixer.pre_init(44100, -16, 2, 512) # Peguei essa config na net para rodar a musica direitinho.
+# Peguei essa config na net para rodar a musica direitinho.
+pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
 
 jump_fx = pygame.mixer.Sound(path.join('sound', 'jump.wav'))
@@ -18,9 +19,10 @@ game_over_fx.set_volume(0.2)
 door_fx = pygame.mixer.Sound(path.join('sound', 'Ta-Da-original.wav'))
 door_fx.set_volume(0.1)
 
+
 class Player():
     def __init__(self, x, y):
-        self.reset(x,y)
+        self.reset(x, y)
 
     def update(self, game_over, world_data):
         dx = 0
@@ -33,14 +35,14 @@ class Player():
             key = pygame.key.get_pressed()
 
             if key[pygame.K_UP] and self.jumped == False and self.in_air == False:
-                jump_fx.play() # Pensar como será esse import
+                jump_fx.play()  # Pensar como será esse import
                 if pygame.sprite.spritecollide(self, sushi_power_group, False):
                     for _duration in range(10):
-                     self.vel_y = -30 # Negative move to up
+                        self.vel_y = -30  # Negative move to up
                 else:
-                 self.vel_y = -15
+                    self.vel_y = -15
                 self.jumped = True
-            
+
             if key[pygame.K_UP] == False:
                 self.jumped = False
 
@@ -69,13 +71,13 @@ class Player():
 
                 if self.index >= len(self.images_right) - 1:
                     self.index = 0
-                    
+
                 if self.direction == 1:
                     self.image = self.images_right[self.index]
-                    
+
                 if self.direction == -1:
                     self.image = self.images_left[self.index]
-            
+
             # Gravity
             self.vel_y += 1
             if self.vel_y > 10:
@@ -107,38 +109,37 @@ class Player():
                 game_over_fx.play()
                 game_over = -1
                 # print(game_over)
-            
+
             # Check for Collision with lava
             if pygame.sprite.spritecollide(self, lava_group, False) and not pygame.sprite.spritecollide(self, sushi_power_group, False):
                 game_over_fx.play()
                 game_over = -1
                 # print(game_over)
-            
+
             # Check for Collision with exit
-            if pygame.sprite.spritecollide(self, exit_group, False):
+            if pygame.sprite.spritecollide(self, exit_group, False) and self.collected_all_coins:
                 door_fx.play()
                 game_over = 1
 
-            #Check for collision with Platforms
+            # Check for collision with Platforms
             for platform in platform_group:
-                #collision in the x direction
+                # collision in the x direction
                 if platform.rect.colliderect(self.rect.x + dx, self.rect.y, self.width, self.height):
                     dx = 0
-                #collision in the y direction
+                # collision in the y direction
                 if platform.rect.colliderect(self.rect.x, self.rect.y + dy, self.width, self.height):
-                    #check if bellow plataform
-                    if abs((self.rect.top + dy) - platform.rect.bottom) <  col_thresh:
+                    # check if bellow plataform
+                    if abs((self.rect.top + dy) - platform.rect.bottom) < col_thresh:
                         self.vel_y = 0
                         dy = platform.rect.bottom - self.rect.top
-                    #check if above plataform
-                    elif abs((self.rect.bottom +dy) - platform.rect.top) < col_thresh:
+                    # check if above plataform
+                    elif abs((self.rect.bottom + dy) - platform.rect.top) < col_thresh:
                         self.rect.bottom = platform.rect.top - 1
                         self.in_air = False
                         dy = 0
-                    #move sideways with the platform
+                    # move sideways with the platform
                     if platform.move_x != 0:
                         self.rect.x += platform.move_direction
-
 
             # Update player coordinates
             self.rect.x += dx
@@ -153,20 +154,22 @@ class Player():
         screen.blit(self.image, self.rect)
 
         return game_over
-    
+
     def reset(self, x, y):
         self.images_right = []
         self.images_left = []
         self.index = 0
         self.counter = 0
-        for num in range(0,5):
-            img_right = pygame.image.load(f'assets/characters/cat/right{num}_.png')
-            img_right = pygame.transform.scale(img_right,(40,45))
-            img_left = pygame.transform.flip(img_right,True, False)
+        for num in range(0, 5):
+            img_right = pygame.image.load(
+                f'assets/characters/cat/right{num}_.png')
+            img_right = pygame.transform.scale(img_right, (40, 45))
+            img_left = pygame.transform.flip(img_right, True, False)
             self.images_right.append(img_right)
             self.images_left.append(img_left)
 
-        self.dead_image = pygame.image.load(r'assets/characters/cat_ghost2.png')
+        self.dead_image = pygame.image.load(
+            r'assets/characters/cat_ghost2.png')
         self.image = self.images_right[self.index]
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -177,5 +180,4 @@ class Player():
         self.jumped = False
         self.direction = 0
         self.in_air = True
-
-
+        self.collected_all_coins = False
