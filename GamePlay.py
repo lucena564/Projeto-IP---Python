@@ -21,6 +21,7 @@ pygame.init()
 clock = pygame.time.Clock()
 
 font_miau = pygame.font.SysFont("Bauhaus 93", 70)
+font_miau_endgame = pygame.font.SysFont("Bauhaus 93", 60)
 font_score = pygame.font.SysFont('Bauhaus 93', 30)  # Método para definir fonte
 
 # Cor em rgb
@@ -29,6 +30,7 @@ black = (0, 0, 0)
 red = (255, 0, 0)
 green = (0, 255, 0)
 blue = (0, 0, 255)
+orange = (230, 97, 29)
 
 fps = 60
 game_over = 0
@@ -37,8 +39,17 @@ main_menu = True
 level = 0
 max_levels = 7
 num_coins_level = 0
-
 score = 0
+zerou_jogo = False
+
+
+def count_coins_level(world_data):
+    counter_coins = 0
+    for line in world_data:
+        for number in line:
+            if number == 7:
+                counter_coins += 1
+    return counter_coins
 
 
 screen_width = BackgroundConstants.SCREEN_WIDTH
@@ -62,6 +73,7 @@ exit_img = pygame.image.load(path.join('assets', 'menu', 'exit_btn.png'))
 
 restart_button = Button(screen_width // 2 - 50,
                         screen_height // 2 + 100, restart_img)
+restart_button_running_level = Button(50, 50, restart_img)
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
@@ -84,10 +96,7 @@ coin_group.add(score_coin)
 
 level_ = 0
 world_data = next_level_array[0][level_]
-for line in world_data:
-    for number in line:
-        if number == 7:
-            num_coins_level += 1
+num_coins_level = count_coins_level(world_data)
 image_name = next_level_array[2][level_]
 world = World(world_data, image_name)
 
@@ -142,11 +151,19 @@ while (run == True):
     screen.blit(next_level_array[level_][1], (0, 0))
 
     if main_menu == True:
+
+        if zerou_jogo:
+            draw_text('VOCÊ ZEROU O JOGO MIAUMIGO!', font_miau_endgame, orange,
+                      55, 300)
+            draw_text('Deseja uma nova Gatoventura?', font_miau_endgame, orange,
+                      75, 350)
+
         if exit_button.draw() == True:
             run = False
 
         if start_button.draw() == True:
             main_menu = False
+            zerou_jogo = False
 
     else:
 
@@ -154,6 +171,11 @@ while (run == True):
         draw_text(' X ' + str(score), font_score, black, tile_size + 40, 17)
 
         if game_over == 0:
+            if restart_button_running_level.draw() == True:
+                world = reset_level(level_)
+                score = 0
+                player.reset(88, screen_height - 102)
+
             blob_group.update()
             platform_group.update()
             sushi_power_group.update()
@@ -209,12 +231,8 @@ while (run == True):
                 if level_ <= max_levels:
                     # Reset level
                     # world_data = []
-                    num_coins_level = 0
-                    actual_level = next_level_array[level_][0]
-                    for line in actual_level:
-                        for number in line:
-                            if number == 7:
-                                num_coins_level += 1
+                    num_coins_level = count_coins_level(
+                        next_level_array[level_][0])
                     world = reset_level(level_)
 
                     score = 0  # Deletar depois se colocarmos um contador de moeda
@@ -224,42 +242,39 @@ while (run == True):
 
             # Index out of the range if get win all lvls, so, dicided to restart.
             except Exception as e:
-                main_menu == True
+                main_menu = True
                 level_ = 0
-                num_coins_level = 0
-                actual_level = next_level_array[level_][0]
-                for line in actual_level:
-                    for number in line:
-                        if number == 7:
-                            num_coins_level += 1
+                num_coins_level = count_coins_level(
+                    next_level_array[level_][0])
                 world = reset_level(level_)
 
                 score = 0
 
                 player.reset(88, screen_height - 102)
                 game_over = 0
+                zerou_jogo = True
                 # Podemos fazer um append para
                 print('Parabéns!!!!!!! Você ganhooou!!')
                 # o primeiro level ser uma tela de parabéns!
                 print(e)
 
-            else:
+            # else:
 
-                if restart_button.draw():
-                    # level = 1
-                    num_coins_level = 0
-                    actual_level = next_level_array[level_][0]
-                    for line in actual_level:
-                        for number in line:
-                            if number == 7:
-                                num_coins_level += 1
-                    world = reset_level(level_)
+            #     if restart_button.draw():
+            #         # level = 1
+            #         num_coins_level = 0
+            #         actual_level = next_level_array[level_][0]
+            #         for line in actual_level:
+            #             for number in line:
+            #                 if number == 7:
+            #                     num_coins_level += 1
+            #         world = reset_level(level_)
 
-                    score = 0  # Deletar depois se colocarmos um contador de moeda
+            #         score = 0  # Deletar depois se colocarmos um contador de moeda
 
-                    player.reset(88, screen_height - 102)
-                    game_over = 0
-                    level_ += 1
+            #         player.reset(88, screen_height - 102)
+            #         game_over = 0
+            #         level_ += 1
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
