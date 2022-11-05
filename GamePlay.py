@@ -11,7 +11,7 @@ from classes.player.Player import Player
 from classes.coin.Coin import Coin
 from classes.world.World import World, blob_group, lava_group, exit_group, coin_group, sushi_power_group, platform_group
 
-from levels.levels_data import *
+from levels.levels_data import next_level_array
 
 # Funções
 def count_coins_level(world_data):
