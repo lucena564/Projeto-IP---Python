@@ -131,9 +131,9 @@ coin_group.add(score_coin)
 
 
 level_ = 0
-world_data = next_level_array[0][level_]
+world_data = next_level_array[level_][0]
 num_coins_level = count_coins_level(world_data)
-image_name = next_level_array[2][level_]
+image_name = next_level_array[level_][2]
 world = World(world_data, image_name)
 
 player = Player(88, screen_height - 102)
