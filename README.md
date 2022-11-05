@@ -21,10 +21,11 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li><a href="#contributors">Contributors</a></li>
-    <li><a href="#built-with">Built With</a></li>
-        <li><a href="#files">Files</a></li>
+    <li><a href="#built-with">Built with</a></li>
+        <li><a href="#files">Files structure</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#play">How to run</a></li>
+        <li><a href="#about-the-process">About the process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -119,6 +120,33 @@
 
 #### Use "python Game.py" only if the computer contains different versions of python
 
+## About the process
+
+<table>
+  <tr>
+  <td align="center"><b>Main challenge</b></td>
+  <td align="center"><b>How we deal</b></td>
+  <tr/>
+  <td align="left">Working with the git and github versioning concept</td>
+  <td align="left">Moments with the team to pass knowledge and clearing up doubts</td>
+ </tr>
+  <td align="center"><b>Main error</b></td>
+  <td align="center"><b>How we deal</b></td>
+  <tr/>
+  <td align="left">The lack of frequency of project focused meetings</td>
+  <td align="left">Asynchronous movement: active communication, division and updating of activities, in the WhatsApp and Discord groups</td>
+ </tr>
+ </tr>
+ </table>
+ 
+ <table>
+  <td align="center"><b>Lessons learnead</b></td>
+  <tr/>
+  <td align="left"></td>
+ </tr>
+ </table>
+
+
 ## Contributing
 
 Any contributions you make are greatly appreciated.
@@ -134,7 +162,7 @@ Any contributions you make are greatly appreciated.
 - Antônio Victor Bezerra Lucena - avbl@cin.ufpe.br
 - Lucas Jorge de Araújo Torres - ljat@cin.ufpe.br
 - Stela Natalie Oliveira Nascimento - snon@cin.ufpe.br
-- Shellyda de Fatima Silva Barbosa - sfsb2@cin.ufpe.br
+- Shellyda de Fátima Silva Barbosa - sfsb2@cin.ufpe.br
 - Thaís Neves de Souza- tns2@cin.ufpe.br
 - Miriam Rayane Mendes da Silva - mrms@cin.ufpe.br
 - Isaias Pereira da Silva - ips2@cin.ufpe.br

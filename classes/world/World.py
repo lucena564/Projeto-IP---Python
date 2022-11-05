@@ -29,6 +29,7 @@ class World():
         dirt_book_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_bookroom.png'))
         dirt_prison_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_prison.png'))
         dirt_garden_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_garden.png'))
+        dirt_restaurant_img = pygame.image.load(os.path.join('assets', 'background', 'dirt_restaurant.png'))
 
         # Grass
         grass_img = pygame.image.load(os.path.join('assets', 'background','grass.png'))
@@ -38,6 +39,7 @@ class World():
         grass_book_img = pygame.image.load(os.path.join('assets', 'background','grass_bookroom.png'))
         grass_prison_img = pygame.image.load(os.path.join('assets', 'background','grass_prison.png'))
         grass_garden_img = pygame.image.load(os.path.join('assets', 'background','grass_garden.png'))
+        grass_restaurant_img = pygame.image.load(os.path.join('assets', 'background','grass_restaurant.png'))
 
         row_count = 0
         for row in world_data:
@@ -89,7 +91,14 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
-
+                    elif image_name == 'restaurant':
+                        img = pygame.transform.scale(dirt_restaurant_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+                    
                     else:
                         img = pygame.transform.scale(dirt_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
@@ -138,6 +147,13 @@ class World():
                         self.tile_list.append(tile)
                     elif image_name == 'garden':
                         img = pygame.transform.scale(grass_garden_img, (tile_size, tile_size))
+                        img_rect = img.get_rect()
+                        img_rect.x = col_count * tile_size
+                        img_rect.y = row_count * tile_size
+                        tile = (img, img_rect)
+                        self.tile_list.append(tile)
+                    elif image_name == 'restaurant':
+                        img = pygame.transform.scale(grass_restaurant_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
