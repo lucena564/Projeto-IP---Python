@@ -162,7 +162,28 @@ LEVEL_7_MAP_DIMENSIONS = [
     [1, 0, 0, 2, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1]
 ]
-
+LEVEL_8_MAP_DIMENSIONS = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 8, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 2, 1],
+    [1, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1],
+    [1, 7, 0, 0, 0, 7, 0, 7, 0, 0, 0, 7, 0, 7, 0, 0, 0, 7, 0, 1],
+    [1, 0, 7, 0, 7, 2, 7, 0, 7, 0, 7, 2, 7, 0, 7, 0, 7, 2, 7, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 10, 0, 10, 10, 3, 10, 10, 10, 10, 10, 3, 10, 10, 10, 10, 10, 3, 10, 1],
+    [1, 2, 7, 1, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 1],
+    [1, 0, 7, 0, 7, 0, 0, 0, 7, 0, 7, 0, 7, 0, 7, 0, 2, 7, 0, 1],
+    [1, 0, 10, 0, 0, 0, 7, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0, 1],
+    [1, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 7, 0, 0, 0, 0, 0, 10, 1],
+    [1, 0, 0, 0, 0, 0, 7, 0, 0, 7, 0, 0, 0, 0, 0, 2, 7, 0, 7, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 7, 0, 0, 2, 9, 2, 1],
+    [1, 0, 0, 0, 7, 2, 9, 2, 7, 3, 7, 2, 9, 2, 2, 7, 7, 3, 0, 1],
+    [1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1]
+]
 
 sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
 bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
@@ -180,15 +201,16 @@ gameroom_img = pygame.image.load(
 garden_img = pygame.image.load(path.join('assets', 'background', 'garden.jpg'))
 # home_img = pygame.image.load(path.join('assets', 'background','home.jpg'))
 prison_img = pygame.image.load(path.join('assets', 'background', 'prison.jpg'))
-restaurant_img = pygame.image.load(
-    path.join('assets', 'background', 'restaurant.jpg'))
+restaurant_img = pygame.image.load(path.join('assets', 'background', 'restaurant.jpg'))
 
 
 # next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS,
 #                                                            lib_img, ''), (LEVEL_3_MAP_DIMENSIONS, alien_test, 'alien')]
 
-next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_5_MAP_DIMENSIONS,
-                                                                                                                                                             booksroom_img, 'booksroom'), (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison'), (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien'), (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden')]
+next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy')
+                    , (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_5_MAP_DIMENSIONS,booksroom_img, 'booksroom')
+                    , (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison'), (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien')
+                    , (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden'), (LEVEL_8_MAP_DIMENSIONS, restaurant_img, 'restaurant')]
 
 
 # next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
