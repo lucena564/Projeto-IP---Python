@@ -13,6 +13,49 @@ from classes.world.World import World, blob_group, lava_group, exit_group, coin_
 
 from levels.levels_data import *
 
+# Funções
+def count_coins_level(world_data):
+    counter_coins = 0
+    for line in world_data:
+        for number in line:
+            if number == 7:
+                counter_coins += 1
+    return counter_coins
+
+# lib_img = pygame.transform.scale(lib_img,(1000,1000))
+
+def draw_grid():  # Just to call the lines
+    for line in range(0, 20):  # 20
+        pygame.draw.line(screen, (255, 255, 255),
+                         (0, line*tile_size), (screen_width, line*tile_size))
+        pygame.draw.line(screen, (255, 255, 255),
+                         (line*tile_size, 0), (line*tile_size, screen_height))
+
+
+def draw_text(text, font, text_col, x, y):
+    img = font.render(text, True, text_col)
+    screen.blit(img, (x, y))
+
+
+def reset_level(level):
+    blob_group.empty()
+    lava_group.empty()
+    coin_group.empty()
+    exit_group.empty()
+    platform_group.empty()
+    coin_group.empty()
+    sushi_power_group.empty()
+
+    # print(level)
+    score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
+    coin_group.add(score_coin)
+    world_data = next_level_array[level][0]
+    image_name = next_level_array[level][2]
+    world = World(world_data, image_name)
+
+    return world
+
+
 # Peguei essa config na net para rodar a musica direitinho.
 pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
@@ -43,13 +86,6 @@ score = 0
 zerou_jogo = False
 
 
-def count_coins_level(world_data):
-    counter_coins = 0
-    for line in world_data:
-        for number in line:
-            if number == 7:
-                counter_coins += 1
-    return counter_coins
 
 
 screen_width = BackgroundConstants.SCREEN_WIDTH
@@ -102,39 +138,6 @@ world = World(world_data, image_name)
 
 player = Player(88, screen_height - 102)
 
-# lib_img = pygame.transform.scale(lib_img,(1000,1000))
-
-
-def draw_grid():  # Just to call the lines
-    for line in range(0, 20):  # 20
-        pygame.draw.line(screen, (255, 255, 255),
-                         (0, line*tile_size), (screen_width, line*tile_size))
-        pygame.draw.line(screen, (255, 255, 255),
-                         (line*tile_size, 0), (line*tile_size, screen_height))
-
-
-def draw_text(text, font, text_col, x, y):
-    img = font.render(text, True, text_col)
-    screen.blit(img, (x, y))
-
-
-def reset_level(level):
-    blob_group.empty()
-    lava_group.empty()
-    coin_group.empty()
-    exit_group.empty()
-    platform_group.empty()
-    coin_group.empty()
-    sushi_power_group.empty()
-
-    # print(level)
-    score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
-    coin_group.add(score_coin)
-    world_data = next_level_array[level][0]
-    image_name = next_level_array[level][2]
-    world = World(world_data, image_name)
-
-    return world
 
 
 run = True
