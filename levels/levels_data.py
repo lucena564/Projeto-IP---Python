@@ -187,6 +187,53 @@ LEVEL_8_MAP_DIMENSIONS = [
     [1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1]
 ]
 
+LEVEL_9_MAP_DIMENSIONS = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 7, 0, 0, 0, 1],
+    [1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 2, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 18, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 7, 0, 0, 7, 0, 1],
+    [1, 0, 0, 0, 7, 0, 0, 17, 0, 0, 0, 2, 0, 0, 2, 0, 0, 2, 0, 1],
+    [1, 0, 0, 0, 2, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1],
+    [1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 17, 0, 0, 0, 0, 8, 1],
+    [1, 2, 2, 2, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+]
+
+LEVEL_10_MAP_DIMENSIONS = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 1],
+    [1, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1],
+    [1, 0, 0, 7, 0, 2, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 9, 9, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 1],
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 2, 9, 9, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 7, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 9, 9, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 1],
+    [1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 9, 9, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 1, 2, 2, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 1],
+    [1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 1],
+    [1, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+]
+
+
 sun_img = pygame.image.load(path.join('assets', 'background', 'sun.png'))
 bg_img = pygame.image.load(path.join('assets', 'background', 'sky.png'))
 
@@ -204,18 +251,20 @@ garden_img = pygame.image.load(path.join('assets', 'background', 'garden.jpg'))
 # home_img = pygame.image.load(path.join('assets', 'background','home.jpg'))
 prison_img = pygame.image.load(path.join('assets', 'background', 'prison.jpg'))
 lib_img = pygame.image.load(path.join('assets', 'background', 'library.png'))
-restaurant_img = pygame.image.load(path.join('assets', 'background', 'restaurant.jpg'))
-
+restaurant_img = pygame.image.load(
+    path.join('assets', 'background', 'restaurant.jpg'))
+lava_img = pygame.image.load(
+    path.join('assets', 'background', 'lava.jpg'))
+swamp_img = pygame.image.load(
+    path.join('assets', 'background', 'swamp.jpg'))
 
 
 # next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS,
 #                                                            lib_img, ''), (LEVEL_3_MAP_DIMENSIONS, alien_test, 'alien')]
 
 
-next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy')
-                    , (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien'), (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison')
-                    , (LEVEL_5_MAP_DIMENSIONS,booksroom_img, 'booksroom'), (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom')
-                    , (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden'), (LEVEL_8_MAP_DIMENSIONS, restaurant_img, 'restaurant')]
+next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien'), (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison'), (LEVEL_5_MAP_DIMENSIONS, booksroom_img, 'booksroom'),
+                    (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden'), (LEVEL_9_MAP_DIMENSIONS, lava_img, 'lava'), (LEVEL_10_MAP_DIMENSIONS, swamp_img, 'swamp'), (LEVEL_8_MAP_DIMENSIONS, restaurant_img, 'restaurant')]
 
 
 # next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
