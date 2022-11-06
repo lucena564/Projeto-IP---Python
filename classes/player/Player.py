@@ -8,8 +8,9 @@ screen = BackgroundConstants.SCREEN
 
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
-# Peguei essa config na net para rodar a musica direitinho.
+# Configuração padrão para os efeitos sonoros (Não mexer aqui.)
 pygame.mixer.pre_init(44100, -16, 2, 512)
+# Fim
 mixer.init()
 
 jump_fx = pygame.mixer.Sound(path.join('sound', 'jump.wav'))
@@ -35,7 +36,7 @@ class Player():
             key = pygame.key.get_pressed()
 
             if key[pygame.K_UP] and self.jumped == False and self.in_air == False:
-                jump_fx.play()  # Pensar como será esse import
+                jump_fx.play()  
                 if pygame.sprite.spritecollide(self, sushi_power_group, False):
                     for _duration in range(10):
                         self.vel_y = -30  # Negative move to up

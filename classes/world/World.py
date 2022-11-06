@@ -1,21 +1,22 @@
 # Classe mais importante, precisa ser um import global.
-# Todas as novas classes são instaciadas aqui.
 
 import os
 import pygame
-from classes.sushi.Sushi import Sushi
 from constants.BackgroundConstants import BackgroundConstants
 from classes.enemies.Enemy import Enemy
+from classes.sushi.Sushi import Sushi
 from classes.exit.Exit import Exit
-from classes.lava.Lava import Lava #, Blue_Lava
+from classes.lava.Lava import Lava 
 from classes.coin.Coin import Coin
 from classes.platform.Platform import Platform
 from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
 
-blob_group, lava_group, coin_group, exit_group, blue_lava_group, sushi_power_group, platform_group = pygame.sprite.Group(
-), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
+# Todas as novas classes são instaciadas aqui.
+
+blob_group, lava_group, coin_group, exit_group, sushi_power_group, platform_group = pygame.sprite.Group(
+), pygame.sprite.Group(), pygame.sprite.Group(),  pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen = BackgroundConstants.SCREEN
 
@@ -329,11 +330,6 @@ class World():
 
                     exit_group.add(exit_action)
 
-                # if tile == 9:
-                #     lava = Blue_Lava(col_count * tile_size,
-                #                      row_count * tile_size + (tile_size // 2))
-                #     lava_group.add(lava)
-
                 if tile == 9:
                     sushi = Sushi(col_count * tile_size,
                                   row_count * tile_size + (tile_size // 2))
@@ -346,4 +342,6 @@ class World():
     def draw(self):
         for tile in self.tile_list:
             screen.blit(tile[0], tile[1])
-            pygame.draw.rect(screen, (255, 255, 255), tile[1], 2)
+
+            # Descomentar a linha a baixo para mostrar o grid.
+            # pygame.draw.rect(screen, (255, 255, 255), tile[1], 2)
