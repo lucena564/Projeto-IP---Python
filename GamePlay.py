@@ -27,9 +27,6 @@ screen_height = BackgroundConstants.SCREEN_HEIGHT
 
 screen = BackgroundConstants.SCREEN
 
-
-
-
 # FUNÇÕES
 def count_coins_level(world_data):
     counter_coins = 0
@@ -72,8 +69,7 @@ def reset_level(level, tile_size):
     return world
 
 
-
-    # Peguei essa config na net para rodar a musica direitinho.
+# Peguei essa config na net para rodar a musica direitinho.
 pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
 pygame.init()
@@ -105,21 +101,20 @@ exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
     # Load sounds
 coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
-coin_fx.set_volume(0.5)
+coin_fx.set_volume(0.05)
 
     # Creating a static coin for score - Had to import Coin class.
 score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
 coin_group.add(score_coin)
 
 
-level_ = 0
+level_ = 9
 world_data = next_level_array[level_][0]
 num_coins_level = count_coins_level(world_data)
 image_name = next_level_array[level_][2]
 world = World(world_data, image_name)
 
 player = Player(88, screen_height - 102)
-
 
 
 run = True
