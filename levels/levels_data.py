@@ -202,11 +202,8 @@ gameroom_img = pygame.image.load(
 garden_img = pygame.image.load(path.join('assets', 'background', 'garden.jpg'))
 # home_img = pygame.image.load(path.join('assets', 'background','home.jpg'))
 prison_img = pygame.image.load(path.join('assets', 'background', 'prison.jpg'))
-
-#Nao usados
 lib_img = pygame.image.load(path.join('assets', 'background', 'library.png'))
-restaurant_img = pygame.image.load(
-    path.join('assets', 'background', 'restaurant.jpg'))
+restaurant_img = pygame.image.load(path.join('assets', 'background', 'restaurant.jpg'))
 
 
 
