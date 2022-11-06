@@ -105,7 +105,7 @@ score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
 coin_group.add(score_coin)
 
 
-level_ = 7
+level_ = 0
 world_data = next_level_array[level_][0]
 num_coins_level = count_coins_level(world_data)
 image_name = next_level_array[level_][2]
