@@ -73,60 +73,58 @@ def reset_level(level, tile_size):
 
 
 
-def main():
     # Peguei essa config na net para rodar a musica direitinho.
-    pygame.mixer.pre_init(44100, -16, 2, 512)
-    mixer.init()
-    pygame.init()
+pygame.mixer.pre_init(44100, -16, 2, 512)
+mixer.init()
+pygame.init()
 
+clock = pygame.time.Clock()
+font_miau = pygame.font.SysFont("Bauhaus 93", 70)
+font_miau_endgame = pygame.font.SysFont("Bauhaus 93", 60)
+font_score = pygame.font.SysFont('Bauhaus 93', 30)
 
-    clock = pygame.time.Clock()
-    font_miau = pygame.font.SysFont("Bauhaus 93", 70)
-    font_miau_endgame = pygame.font.SysFont("Bauhaus 93", 60)
-    font_score = pygame.font.SysFont('Bauhaus 93', 30)
+fps = 60
+game_over = 0
+main_menu = True
+max_levels = len(next_level_array)
+num_coins_level = 0
+score = 0
+zerou_jogo = False
 
-    fps = 60
-    game_over = 0
-    main_menu = True
-    max_levels = len(next_level_array)
-    num_coins_level = 0
-    score = 0
-    zerou_jogo = False
+pygame.display.set_caption('House of cats')
 
-    pygame.display.set_caption('House of cats')
+restart_img = pygame.image.load(path.join('assets', 'menu', 'restart_btn.png'))
+start_img = pygame.image.load(path.join('assets', 'menu', 'start_btn.png'))
+exit_img = pygame.image.load(path.join('assets', 'menu', 'exit_btn.png'))
 
-    restart_img = pygame.image.load(path.join('assets', 'menu', 'restart_btn.png'))
-    start_img = pygame.image.load(path.join('assets', 'menu', 'start_btn.png'))
-    exit_img = pygame.image.load(path.join('assets', 'menu', 'exit_btn.png'))
-
-    restart_button = Button(screen_width // 2 - 50,
+restart_button = Button(screen_width // 2 - 50,
                             screen_height // 2 + 100, restart_img)
-    restart_button_running_level = Button(50, 50, restart_img)
-    start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
-    exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
+restart_button_running_level = Button(50, 50, restart_img)
+start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
+exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
     # Load sounds
-    coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
-    coin_fx.set_volume(0.5)
+coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
+coin_fx.set_volume(0.5)
 
     # Creating a static coin for score - Had to import Coin class.
-    score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
-    coin_group.add(score_coin)
+score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
+coin_group.add(score_coin)
 
 
-    level_ = 0
-    world_data = next_level_array[level_][0]
-    num_coins_level = count_coins_level(world_data)
-    image_name = next_level_array[level_][2]
-    world = World(world_data, image_name)
+level_ = 0
+world_data = next_level_array[level_][0]
+num_coins_level = count_coins_level(world_data)
+image_name = next_level_array[level_][2]
+world = World(world_data, image_name)
 
-    player = Player(88, screen_height - 102)
+player = Player(88, screen_height - 102)
 
 
 
-    run = True
+run = True
     # All game is ran here.
-    while (run == True):
+while (run == True):
 
         clock.tick(fps)
         screen.blit(next_level_array[level_][1], (0, 0))
@@ -231,8 +229,4 @@ def main():
                 run = False
 
         pygame.display.update()
-    pygame.quit()
-
-
-if __name__=="__main__":
-    main()
+pygame.quit()
