@@ -142,7 +142,16 @@
  <table>
   <td align="center"><b>Lessons learnead</b></td>
   <tr/>
-  <td align="left"></td>
+  <td align="left">
+  <ul>
+  <li>Asynchronous work</li>
+  <li>Importance of team work and active communication</li>
+  <li>Knowledge sharing</li>
+  <li>Git and Github versioning concept</li>
+  <li>Python and Pygame features</li>
+  <li>Object Oriented Programming (OOP)</li>
+  </ul>
+  </td>
  </tr>
  </table>
 
