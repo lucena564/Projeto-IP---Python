@@ -1,21 +1,22 @@
 # Classe mais importante, precisa ser um import global.
-# Todas as novas classes são instaciadas aqui.
 
 import os
 import pygame
-from classes.sushi.Sushi import Sushi
 from constants.BackgroundConstants import BackgroundConstants
 from classes.enemies.Enemy import Enemy
+from classes.sushi.Sushi import Sushi
 from classes.exit.Exit import Exit
-from classes.lava.Lava import Lava, Blue_Lava
+from classes.lava.Lava import Lava 
 from classes.coin.Coin import Coin
-from classes.platform.Platform import Platform, Book_Platform, Prison_Platform, Garden_Platform, Lava_Platform, Swamp_Platform
+from classes.platform.Platform import Platform
 from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
 
-blob_group, lava_group, coin_group, exit_group, blue_lava_group, sushi_power_group, platform_group = pygame.sprite.Group(
-), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
+# Todas as novas classes são instaciadas aqui.
+
+blob_group, lava_group, coin_group, exit_group, sushi_power_group, platform_group = pygame.sprite.Group(
+), pygame.sprite.Group(), pygame.sprite.Group(),  pygame.sprite.Group(), pygame.sprite.Group(), pygame.sprite.Group()
 
 screen = BackgroundConstants.SCREEN
 
@@ -108,6 +109,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'prison':
                         img = pygame.transform.scale(
                             dirt_prison_img, (tile_size, tile_size))
@@ -116,6 +118,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'garden':
                         img = pygame.transform.scale(
                             dirt_garden_img, (tile_size, tile_size))
@@ -124,6 +127,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'restaurant':
                         img = pygame.transform.scale(
                             dirt_restaurant_img, (tile_size, tile_size))
@@ -132,6 +136,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'swamp':
                         img = pygame.transform.scale(
                             dirt_swamp_img, (tile_size, tile_size))
@@ -140,6 +145,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'lava':
                         img = pygame.transform.scale(
                             dirt_lava_img, (tile_size, tile_size))
@@ -185,6 +191,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'booksroom':
                         img = pygame.transform.scale(
                             grass_book_img, (tile_size, tile_size))
@@ -193,6 +200,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'prison':
                         img = pygame.transform.scale(
                             grass_prison_img, (tile_size, tile_size))
@@ -201,6 +209,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'garden':
                         img = pygame.transform.scale(
                             grass_garden_img, (tile_size, tile_size))
@@ -209,6 +218,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'restaurant':
                         img = pygame.transform.scale(
                             grass_restaurant_img, (tile_size, tile_size))
@@ -217,6 +227,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'lava':
                         img = pygame.transform.scale(
                             grass_lava_img, (tile_size, tile_size))
@@ -225,6 +236,7 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
+
                     elif image_name == 'swamp':
                         img = pygame.transform.scale(
                             grass_swamp_img, (tile_size, tile_size))
@@ -235,8 +247,7 @@ class World():
                         self.tile_list.append(tile)
 
                     else:
-                        img = pygame.transform.scale(
-                            grass_img, (tile_size, tile_size))
+                        img = pygame.transform.scale(grass_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
@@ -251,68 +262,62 @@ class World():
                     blob_group.add(blob)
 
                 if tile == 4:  # horizontal Platform
-                    platform = Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
+                    if image_name == 'lava':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform_lava.png')
+                        platform_group.add(platform)
+
+                    elif image_name == 'swamp':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform_swamp.png')
+                        platform_group.add(platform)
+
+                    elif image_name == 'garden':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform_garden.png')
+                        platform_group.add(platform)
+
+                    elif image_name == 'prison':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform_prison.png')
+                        platform_group.add(platform)
+
+                    elif image_name == 'booksroom':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform_bookroom.png')
+                        platform_group.add(platform)
+
+                    else:
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 1, 0, 'platform.png')
+                        platform_group.add(platform)
+
                 if tile == 5:  # vertical platform
-                    platform = Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    if image_name == 'lava':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform_lava.png')
+                        platform_group.add(platform)
 
-                # Book
-                if tile == 11:  # horizontal Platform
-                    platform = Book_Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
-                if tile == 12:  # vertical platform
-                    platform = Book_Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    elif image_name == 'swamp':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform_swamp.png')
+                        platform_group.add(platform)
 
-                # Prison
-                if tile == 13:  # horizontal Platform
-                    platform = Prison_Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
-                if tile == 14:  # vertical platform
-                    platform = Prison_Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    elif image_name == 'garden':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform_garden.png')
+                        platform_group.add(platform)
 
-                # Garden
-                if tile == 15:  # horizontal Platform
-                    platform = Garden_Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
-                if tile == 16:  # vertical platform
-                    platform = Garden_Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    elif image_name == 'prison':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform_prison.png')
+                        platform_group.add(platform)
 
-                 # Lava
-                if tile == 17:  # horizontal Platform
-                    platform = Lava_Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
-                if tile == 18:  # vertical platform
-                    platform = Lava_Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    elif image_name == 'booksroom':
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform_bookroom.png')
+                        platform_group.add(platform)
 
-                # Swamp
-                if tile == 19:  # horizontal Platform
-                    platform = Swamp_Platform(
-                        col_count * tile_size, row_count * tile_size, 1, 0)
-                    platform_group.add(platform)
-                if tile == 20:  # vertical platform
-                    platform = Swamp_Platform(
-                        col_count * tile_size, row_count * tile_size, 0, 1)
-                    platform_group.add(platform)
+                    else:
+                        platform = Platform(col_count * tile_size, row_count * tile_size, 0, 1, 'platform.png')
+                        platform_group.add(platform)
 
                 if tile == 6:
-                    lava = Lava(col_count * tile_size, row_count *
-                                tile_size + (tile_size // 2))
-                    lava_group.add(lava)
+                    if image_name == 'garden' or image_name == 'swamp' or image_name == 'alien' or image_name == 'booksroom' or image_name == 'restaurant':
+                        lava = Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2), 'lava_blue.png')
+                        lava_group.add(lava)
+                    else:
+                        lava = Lava(col_count * tile_size, row_count * tile_size + (tile_size // 2), 'lava.png')
+                        lava_group.add(lava)
 
                 if tile == 7:
                     coin = Coin(col_count * tile_size + (tile_size // 2),
@@ -326,19 +331,17 @@ class World():
                     exit_group.add(exit_action)
 
                 if tile == 9:
-                    lava = Blue_Lava(col_count * tile_size,
-                                     row_count * tile_size + (tile_size // 2))
-                    lava_group.add(lava)
-
-                if tile == 10:
                     sushi = Sushi(col_count * tile_size,
                                   row_count * tile_size + (tile_size // 2))
                     sushi_power_group.add(sushi)
 
+                
                 col_count += 1
             row_count += 1
 
     def draw(self):
         for tile in self.tile_list:
             screen.blit(tile[0], tile[1])
-            pygame.draw.rect(screen, (255, 255, 255), tile[1], 2)
+
+            # Descomentar a linha a baixo para mostrar o grid.
+            # pygame.draw.rect(screen, (255, 255, 255), tile[1], 2)

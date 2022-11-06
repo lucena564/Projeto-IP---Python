@@ -1,5 +1,3 @@
-# Ler levels_data.py
-
 from os import path
 import pygame
 from pygame import mixer
@@ -26,9 +24,6 @@ screen_width = BackgroundConstants.SCREEN_WIDTH
 screen_height = BackgroundConstants.SCREEN_HEIGHT
 
 screen = BackgroundConstants.SCREEN
-
-
-
 
 # FUNÇÕES
 def count_coins_level(world_data):
@@ -62,7 +57,6 @@ def reset_level(level, tile_size):
     coin_group.empty()
     sushi_power_group.empty()
 
-    # print(level)
     score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
     coin_group.add(score_coin)
     world_data = next_level_array[level][0]
@@ -71,12 +65,11 @@ def reset_level(level, tile_size):
 
     return world
 
-
-
-    # Peguei essa config na net para rodar a musica direitinho.
+# Configuração padrão para os efeitos sonoros (Não mexer aqui.)
 pygame.mixer.pre_init(44100, -16, 2, 512)
 mixer.init()
 pygame.init()
+# Fim
 
 clock = pygame.time.Clock()
 font_miau = pygame.font.SysFont("Bauhaus 93", 70)
@@ -103,11 +96,11 @@ restart_button_running_level = Button(50, 50, restart_img)
 start_button = Button(screen_width // 2 - 350, screen_height // 2, start_img)
 exit_button = Button(screen_width // 2 + 150, screen_height // 2, exit_img)
 
-    # Load sounds
+# Load sounds
 coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
-coin_fx.set_volume(0.5)
+coin_fx.set_volume(0.05)
 
-    # Creating a static coin for score - Had to import Coin class.
+# Creating a static coin for score - Had to import Coin class.
 score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
 coin_group.add(score_coin)
 
@@ -121,9 +114,9 @@ world = World(world_data, image_name)
 player = Player(88, screen_height - 102)
 
 
-
 run = True
-    # All game is ran here.
+
+# All game is ran here.
 while (run == True):
 
         clock.tick(fps)
@@ -133,9 +126,9 @@ while (run == True):
 
             if zerou_jogo:
                 draw_text(screen, 'VOCÊ ZEROU O JOGO MIAUMIGO!', font_miau_endgame, orange,
-                        55, 300)
+                        170, 300)
                 draw_text(screen, 'Deseja uma nova Gatoventura?', font_miau_endgame, orange,
-                        75, 350)
+                        195, 350)
 
             if exit_button.draw() == True:
                 run = False
@@ -185,7 +178,7 @@ while (run == True):
                 draw_text(screen, 'Miaaaaaaaau!!! >:(', font_miau, red,
                         (screen_width // 2) - 250, screen_height // 2)
                 if restart_button.draw() == True:
-                    # Precisei criar uma classe reset no player
+                    # Foi criado uma classe reset no player
                     # para o botão do reset funcionar.
                     # world_data = []
                     world = reset_level(level_, tile_size)
