@@ -39,7 +39,6 @@ def count_coins_level(world_data):
                 counter_coins += 1
     return counter_coins
 
-# lib_img = pygame.transform.scale(lib_img,(1000,1000))
 
 def draw_grid(screen, tile_size, screen_width, screen_height):  # Just to call the lines
     for line in range(0, 20):  # 20
@@ -73,24 +72,22 @@ def reset_level(level, tile_size):
     return world
 
 
-# Peguei essa config na net para rodar a musica direitinho.
+
 def main():
+    # Peguei essa config na net para rodar a musica direitinho.
     pygame.mixer.pre_init(44100, -16, 2, 512)
     mixer.init()
     pygame.init()
 
 
     clock = pygame.time.Clock()
-  # Método para definir fonte
     font_miau = pygame.font.SysFont("Bauhaus 93", 70)
     font_miau_endgame = pygame.font.SysFont("Bauhaus 93", 60)
     font_score = pygame.font.SysFont('Bauhaus 93', 30)
 
     fps = 60
     game_over = 0
-    player_has_jump_power = False
     main_menu = True
-    level = 0
     max_levels = len(next_level_array)
     num_coins_level = 0
     score = 0
@@ -112,7 +109,7 @@ def main():
     coin_fx = pygame.mixer.Sound(path.join('sound', 'comic_lick.wav'))
     coin_fx.set_volume(0.5)
 
-# Creating a static coin for score - Had to import Coin class.
+    # Creating a static coin for score - Had to import Coin class.
     score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
     coin_group.add(score_coin)
 
@@ -128,16 +125,10 @@ def main():
 
 
     run = True
-
-    mapa_skip = 1
-# All game run here.
+    # All game is ran here.
     while (run == True):
 
         clock.tick(fps)
-
-        # Tela base do jogo. Colocaremos algumas condições no futuro para o plano de fundo mudar com o nível.
-        # screen.blit(bg_img, (0,0))
-        # screen.blit(sun_img, (100,100))
         screen.blit(next_level_array[level_][1], (0, 0))
 
         if main_menu == True:
@@ -193,7 +184,6 @@ def main():
 
             # If player died
             if game_over == -1:
-                # game_over_fx.play()
                 draw_text(screen, 'Miaaaaaaaau!!! >:(', font_miau, red,
                         (screen_width // 2) - 250, screen_height // 2)
                 if restart_button.draw() == True:
@@ -201,9 +191,7 @@ def main():
                     # para o botão do reset funcionar.
                     # world_data = []
                     world = reset_level(level_, tile_size)
-
                     score = 0  # Deletar depois se colocarmos um contador de moeda
-
                     player.reset(88, screen_height - 102)
                     game_over = 0
 
@@ -215,13 +203,10 @@ def main():
                 try:
                     if level_ <= max_levels:
                         # Reset level
-                        # world_data = []
                         num_coins_level = count_coins_level(
                             next_level_array[level_][0])
                         world = reset_level(level_, tile_size)
-
                         score = 0  # Deletar depois se colocarmos um contador de moeda
-
                         player.reset(88, screen_height - 102)
                         game_over = 0
 
@@ -238,9 +223,6 @@ def main():
                     player.reset(88, screen_height - 102)
                     game_over = 0
                     zerou_jogo = True
-                    # Podemos fazer um append para
-                    print('Parabéns!!!!!!! Você ganhooou!!')
-                    # o primeiro level ser uma tela de parabéns!
                     print(e)
 
 
@@ -249,8 +231,6 @@ def main():
                 run = False
 
         pygame.display.update()
-
-
     pygame.quit()
 
 
