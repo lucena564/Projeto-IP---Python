@@ -186,11 +186,13 @@ while (run == True):
             # Update score
             # Check if a coin has been collected
             # True parameter is to colect the coin and hide it inside the map.
-            if pygame.sprite.spritecollide(player, coin_group, True):
-                coin_fx.play()
-                score += 1
-                if (score == num_coins_level):
-                    player.collected_all_coins = True
+            for coin in coin_group:
+                if pygame.sprite.collide_rect(player, coin):
+                    coin_fx.play()
+                    coin.remove(coin_group)
+                    score += 1
+                    if (score == num_coins_level):
+                        player.collected_all_coins = True
 
                 # if score == 1:
                 #     print(f'Moeda coletada = {score}')
