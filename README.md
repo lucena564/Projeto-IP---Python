@@ -21,6 +21,7 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li><a href="#contributors">Contributors</a></li>
+    <li><a href="#team-division">Team division</a></li>
     <li><a href="#built-with">Built with</a></li>
         <li><a href="#files">Files structure</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -45,21 +46,33 @@
 
 <td align="center"><a href="https://github.com/thaisnevest"><img src="https://avatars.githubusercontent.com/u/56198772?v=4" width="100px;" alt=""/><br /><sub><b>Thaís Neves</b></sub></a><br/></td>
 </tr>
-  <td align="center"><a href="https://github.com/miriamrms"><img src="https://avatars.githubusercontent.com/u/108680161?v=4" width="100px;" alt=""/><br /><sub><b>Miriam</b></sub></a><br/></td>
+  <td align="center"><a href="https://github.com/miriamrms"><img src="https://avatars.githubusercontent.com/u/108680161?v=4" width="100px;" alt=""/><br /><sub><b>Miriam Mendes</b></sub></a><br/></td>
   <td align="center"><a href="https://github.com/Isaiaspereiraes"><img src="https://avatars.githubusercontent.com/u/108680376?v=4" width="100px;" alt=""/><br /><sub><b>Isaias Pereira</b></sub></a><br/></td>
  </tr>
  </table>
+ 
+ ## Team division
+ 
+ <table>
+  <tr/>
+  <td align="left">
+  <li><b>Antônio Lucena:</b> Responsible for the first collectibles, bounding box definitions and their hit box, put the same collision system with the floor, sound in certain collectibles. Also, modeled our cat in the hat, collecting the frames of his walking animation, starting his movement system. Finally, adjusted the background of some levels to change the theme with the game's progression.</li>
+  <li><b>Shellyda Barbosa:</b> Technical support for the team, mainly helping them to understand and implement git and github concepts. Also, reorganized the project's file architecture, thus ensuring a better organization of the code. Besides that, implemented the Sushi item functionality that allows "super jump" power to the main character.</li>
+  <li><b>Lucas Torres:</b> Implemented the mechanics that control the completion of levels and improved the game mechanics. Also made two levels of the game and the custom tiles used in them.</li>
+  <li><b>Stela Nascimento:</b> Responsible for the creation of 6 levels, creation of the Platform Class (platforms moving in the vertical and horizontal direction), tile customization added, addition of a new enemy and sounds, as well as changing the coin image and finally, fixed some bugs like counting the coins in the levels and ensuring that the player didn't get two coins at the same time.</li>
+  <li><b>Thaís Neves:</b> Responsible for the visual and design part of the game, implementation of backgrounds. Also, was able to fix bugs and help with the organization and functions of other members, in addition to being part of the construction of the documentation and final presentation.</li>
+  <li><b>Miriam Mendes:</b> Responsible for Separate the concepts that were seen in the classes used within the code. Also, separate the libraries, tools and frameworks used in the code and justify the use of each one. Besides that, created a responsive mode for the game to run on smaller screens, with scale adjustment.</li>
+  <li><b>Isaias Pereira:</b> </li>
+  </td>
+ </tr>
+ </table>
+
 
 ### Built With
 
 - [ Python 3.0 ](https://www.python.org/download/releases/3.0/)
 - [ Pygame 2.1.2](https://www.pygame.org/wiki/GettingStarted)
 
-#### Ferramentas
-
-#### Bibliotecas
-
-#### Frameworks
 
 ## Files
 
