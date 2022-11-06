@@ -28,6 +28,8 @@
         <li><a href="#play">How to run</a></li>
         <li><a href="#about-the-process">About the process</a></li>
         <li><a href="#principal-applied-programming-concepts">Principal Applied programming concepts</a></li>
+        <li><a href="#game-gallery">Game Gallery</a></li>
+        
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -205,6 +207,10 @@
  </table>
  
  #### Check this [document](https://docs.google.com/document/d/1D6FRVsj78DKtxAoccW1E4WZTYwIBTmL8qnNQpiZillE/edit?usp=sharing) too see in a detailed way all the programming concepts applied in the project
+ 
+## Game Gallery
+
+
 
 ## Contributing
 
