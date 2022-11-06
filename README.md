@@ -29,7 +29,6 @@
         <li><a href="#about-the-process">About the process</a></li>
         <li><a href="#principal-applied-programming-concepts">Principal Applied programming concepts</a></li>
         <li><a href="#game-gallery">Game Gallery</a></li>
-        
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
