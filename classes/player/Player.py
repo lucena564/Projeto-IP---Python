@@ -117,8 +117,8 @@ class Player():
                 # print(game_over)
 
             # Check for Collision with exit
-            if pygame.sprite.spritecollide(self, exit_group, False) and self.collected_all_coins:
-            #if pygame.sprite.spritecollide(self, exit_group, False):
+            # if pygame.sprite.spritecollide(self, exit_group, False) and self.collected_all_coins:
+            if pygame.sprite.spritecollide(self, exit_group, False):
                 door_fx.play()
                 game_over = 1
 
