@@ -84,7 +84,7 @@ num_coins_level = 0
 score = 0
 zerou_jogo = False
 
-pygame.display.set_caption('Catify: the world')
+pygame.display.set_caption('Catify: The World')
 
 restart_img = pygame.image.load(path.join('assets', 'menu', 'restart_btn.png'))
 start_img = pygame.image.load(path.join('assets', 'menu', 'start_btn.png'))
