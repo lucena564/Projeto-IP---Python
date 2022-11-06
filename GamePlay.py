@@ -84,7 +84,7 @@ num_coins_level = 0
 score = 0
 zerou_jogo = False
 
-pygame.display.set_caption('House of cats')
+pygame.display.set_caption('Catify: the world')
 
 restart_img = pygame.image.load(path.join('assets', 'menu', 'restart_btn.png'))
 start_img = pygame.image.load(path.join('assets', 'menu', 'start_btn.png'))
@@ -105,7 +105,7 @@ score_coin = Coin((tile_size // 2) + 50, (tile_size // 2) + 0)
 coin_group.add(score_coin)
 
 
-level_ = 0
+level_ = 7
 world_data = next_level_array[level_][0]
 num_coins_level = count_coins_level(world_data)
 image_name = next_level_array[level_][2]
