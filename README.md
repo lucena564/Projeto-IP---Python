@@ -72,15 +72,16 @@
 
 - [ Python 3.0 ](https://www.python.org/download/releases/3.0/)
 - [ Pygame 2.1.2](https://www.pygame.org/wiki/GettingStarted)
+- [ OS ](https://python.readthedocs.io/en/stable/library/os.html)
 
 #### Why we used pygame as library
 - Greater amount of online repositories, available for learning.
-- Ease of creating frames for the game's surface, with the positioning of sprites using the library's rect function.
+- Ease of creating frames for the game's surface, with the positioning of sprites using the library's <i>rect</i> function.
 - It has functions for colliding game objects.
 - Ease of handling game events.
 
-#### Why we used os as library
-- We use the os library only to help access the images and audios directory with the path function.
+#### Why we used <b>OS</b> as library
+- We use the <b>OS</b> library only to help access the images and audios directory with the <i>path</i> function.
 
 
 
