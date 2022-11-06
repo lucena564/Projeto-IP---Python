@@ -9,7 +9,7 @@ from classes.enemies.Enemy import Enemy
 from classes.exit.Exit import Exit
 from classes.lava.Lava import Lava, Blue_Lava
 from classes.coin.Coin import Coin
-from classes.platform.Platform import Platform, Book_Platform, Prison_Platform, Garden_Platform
+from classes.platform.Platform import Platform, Book_Platform, Prison_Platform, Garden_Platform, Lava_Platform, Swamp_Platform
 from levels.levels_data import *
 
 tile_size = BackgroundConstants.TILE_SIZE
@@ -132,17 +132,17 @@ class World():
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
-                    elif image_name == 'lava':
+                    elif image_name == 'swamp':
                         img = pygame.transform.scale(
-                            dirt_lava_img, (tile_size, tile_size))
+                            dirt_swamp_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)
                         self.tile_list.append(tile)
-                    elif image_name == 'swamp':
+                    elif image_name == 'lava':
                         img = pygame.transform.scale(
-                            dirt_swamp_img, (tile_size, tile_size))
+                            dirt_lava_img, (tile_size, tile_size))
                         img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
@@ -220,7 +220,7 @@ class World():
                     elif image_name == 'lava':
                         img = pygame.transform.scale(
                             grass_lava_img, (tile_size, tile_size))
-                        mg_rect = img.get_rect()
+                        img_rect = img.get_rect()
                         img_rect.x = col_count * tile_size
                         img_rect.y = row_count * tile_size
                         tile = (img, img_rect)

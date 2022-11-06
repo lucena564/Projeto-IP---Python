@@ -56,7 +56,7 @@ LEVEL_3_MAP_DIMENSIONS = [
     [1, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 0, 0, 0, 0, 0, 0, 0, 7, 1],
+    [1, 0, 0, 0, 0, 0, 0, 0, 7, 7, 7, 0, 0, 0, 0, 0, 2, 0, 7, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 10, 2, 2, 0, 0, 0, 0, 0, 0, 0, 7, 1],
     [1, 0, 0, 0, 0, 0, 0, 7, 2, 0, 0, 0, 7, 0, 0, 7, 0, 0, 7, 1],
     [1, 0, 0, 0, 7, 7, 7, 2, 0, 0, 0, 0, 2, 6, 6, 2, 0, 0, 7, 1],
@@ -206,7 +206,7 @@ LEVEL_9_MAP_DIMENSIONS = [
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 17, 0, 0, 0, 0, 8, 1],
-    [1, 2, 2, 2, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1],
+    [1, 1, 1, 1, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ]
 
@@ -263,8 +263,8 @@ swamp_img = pygame.image.load(
 #                                                            lib_img, ''), (LEVEL_3_MAP_DIMENSIONS, alien_test, 'alien')]
 
 
-next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien'), (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison'), (LEVEL_5_MAP_DIMENSIONS, booksroom_img, 'booksroom'),
-                    (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden'), (LEVEL_9_MAP_DIMENSIONS, lava_img, 'lava'), (LEVEL_10_MAP_DIMENSIONS, swamp_img, 'swamp'), (LEVEL_8_MAP_DIMENSIONS, restaurant_img, 'restaurant')]
+next_level_array = [(LEVEL_1_MAP_DIMENSIONS, bg_img, ''), (LEVEL_9_MAP_DIMENSIONS, lava_img, 'lava'), (LEVEL_10_MAP_DIMENSIONS, swamp_img, 'swamp'), (LEVEL_2_MAP_DIMENSIONS, candy_img, 'candy'), (LEVEL_4_MAP_DIMENSIONS, alien_test, 'alien'), (LEVEL_6_MAP_DIMENSIONS, prison_img, 'prison'), (LEVEL_5_MAP_DIMENSIONS, booksroom_img, 'booksroom'),
+                    (LEVEL_3_MAP_DIMENSIONS, gameroom_img, 'gameroom'), (LEVEL_7_MAP_DIMENSIONS, garden_img, 'garden'), (LEVEL_8_MAP_DIMENSIONS, restaurant_img, 'restaurant')]
 
 
 # next_level_array = [LEVEL_1_MAP_DIMENSIONS, LEVEL_2_MAP_DIMENSIONS, LEVEL_3_MAP_DIMENSIONS, LEVEL_4_MAP_DIMENSIONS, LEVEL_5_MAP_DIMENSIONS]
