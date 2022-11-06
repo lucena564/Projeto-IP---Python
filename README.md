@@ -154,6 +154,8 @@
   </td>
  </tr>
  </table>
+ 
+ #### Check ideation work in [Miro board](https://miro.com/app/board/uXjVPHgD7M4=/?share_link_id=163366210101)
 
 
 ## Contributing
