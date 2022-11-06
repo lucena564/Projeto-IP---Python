@@ -63,7 +63,7 @@
   <li><b>Stela Nascimento:</b> Responsible for the creation of 6 levels, creation of the Platform Class (platforms moving in the vertical and horizontal direction), tile customization added, addition of a new enemy and sounds, as well as changing the coin image and finally, fixed some bugs like counting the coins in the levels and ensuring that the player didn't get two coins at the same time.</li>
   <li><b>Thaís Neves:</b> Responsible for the visual and design part of the game, implementation of backgrounds. Also, was able to fix bugs and help with the organization and functions of other members, in addition to being part of the construction of the documentation and final presentation.</li>
   <li><b>Miriam Mendes:</b> Responsible for Separate the concepts that were seen in the classes used within the code. Also, separate the libraries, tools and frameworks used in the code and justify the use of each one. Besides that, created a responsive mode for the game to run on smaller screens, with scale adjustment.</li>
-  <li><b>Isaias Pereira: Responsible for refactoring, organizing and cleaning the main GamePlay.py code; assist in maintaining track capture and other tasks; the logic that protects the player from creating two coins at the same time, allowing the item "coin" to have an independent size; and creation of the "restaurant" hard level.</b> </li>
+  <li><b>Isaias Pereira:</b> Responsible for refactoring, organizing and cleaning the main GamePlay.py code; assist in maintaining track capture and other tasks; the logic that protects the player from creating two coins at the same time, allowing the item "coin" to have an independent size; and creation of the "restaurant" hard level.</li>
   </td>
  </tr>
  </table>
