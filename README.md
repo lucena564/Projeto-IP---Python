@@ -26,6 +26,7 @@
         <li><a href="#installation">Installation</a></li>
         <li><a href="#play">How to run</a></li>
         <li><a href="#about-the-process">About the process</a></li>
+        <li><a href="#principal-applied-programming-concepts">Principal Applied programming concepts</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -34,7 +35,6 @@
 
 <table>
   <tr>
-  
  <td align="center"><a href="https://github.com/lucena564"><img src="https://avatars.githubusercontent.com/u/85140867?v=4" width="100px;" alt=""/><br /><sub><b>Antônio Lucena</b></sub></a><br/></td>
 
 <td align="center"><a href="https://github.com/LucasTorres96"><img src="https://avatars.githubusercontent.com/u/84953349?v=4" width="100px;" alt=""/><br /><sub><b>Lucas Torres</b></sub></a><br/></td>
@@ -157,6 +157,24 @@
  
  #### Check ideation work in [Miro board](https://miro.com/app/board/uXjVPHgD7M4=/?share_link_id=163366210101)
 
+## Principal Applied programming concepts
+
+<table>
+  <tr>
+ <td align="center"><img width="800" alt="image" src="https://user-images.githubusercontent.com/69990297/200190174-f404cfb1-ee2d-4d6e-982e-e5b297e3310e.png"><img width="800" alt="image" src="https://user-images.githubusercontent.com/69990297/200190857-f5eafea7-9cad-4ec1-8976-c8e7098fec29.png">
+<br /><b>Logical and Relational Operators, Conditional Commands</b></a><br/></td>
+
+ <td align="center"><img width="800" alt="image" src="https://user-images.githubusercontent.com/69990297/200190253-e14b50d5-422f-4fe9-9315-58d2281860ca.png"><img width="800" alt="image" src="https://user-images.githubusercontent.com/69990297/200190329-00de36df-ad22-4ee6-9a3e-03a285025c69.png"><br /><b>Loops</b></a><br/></td>
+ </tr>
+   <tr>
+ <td align="center"><img width="500" alt="image" src="https://user-images.githubusercontent.com/69990297/200190621-5419a3ae-0f25-4874-878a-b60949726c24.png"><img width="443" alt="image" src="https://user-images.githubusercontent.com/69990297/200190659-9624f863-99f9-4a21-8231-99ff65585834.png"><img width="500" alt="image" src="https://user-images.githubusercontent.com/69990297/200190556-b1447de1-ccf2-4da2-9d2b-dbfa2be0399b.png">
+<br /><b>Lists</b></a><br/></td>
+ <td align="center"><img width="441" alt="image" src="https://user-images.githubusercontent.com/69990297/200190922-6ec4e304-cb61-4e11-887c-a3fbea27b880.png"><img width="448" alt="image" src="https://user-images.githubusercontent.com/69990297/200190939-7bdd9b97-0910-442f-8f46-a5a68e3e6fe6.png"><img width="446" alt="image" src="https://user-images.githubusercontent.com/69990297/200190964-1beb8ada-1dc6-450c-83ae-29fd73648bf9.png">
+<br /><b>Functions</b></a><br/></td>
+ </tr>
+ </table>
+ 
+ #### Check this [document](https://docs.google.com/document/d/1D6FRVsj78DKtxAoccW1E4WZTYwIBTmL8qnNQpiZillE/edit?usp=sharing) too see in a detailed way all the programming concepts applied in the project
 
 ## Contributing
 
