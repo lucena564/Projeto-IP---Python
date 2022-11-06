@@ -4,7 +4,7 @@
   <a href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38519644-2010-4a95-afbe-6294409b100e/df01nc6-a28c72e6-7da2-4cd5-8a06-3d636730c0cb.png/v1/fill/w_970,h_824,q_70,strp/farmer_cat_by_selleriart_df01nc6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4OCIsInBhdGgiOiJcL2ZcLzM4NTE5NjQ0LTIwMTAtNGE5NS1hZmJlLTYyOTQ0MDliMTAwZVwvZGYwMW5jNi1hMjhjNzJlNi03ZGEyLTRjZDUtOGEwNi0zZDYzNjczMGMwY2IucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5YYX8XPeCXw_AR8MXsuFBnd-HPtUq1AXFe68D127b34">
     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/38519644-2010-4a95-afbe-6294409b100e/df01nc6-a28c72e6-7da2-4cd5-8a06-3d636730c0cb.png/v1/fill/w_970,h_824,q_70,strp/farmer_cat_by_selleriart_df01nc6-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4OCIsInBhdGgiOiJcL2ZcLzM4NTE5NjQ0LTIwMTAtNGE5NS1hZmJlLTYyOTQ0MDliMTAwZVwvZGYwMW5jNi1hMjhjNzJlNi03ZGEyLTRjZDUtOGEwNi0zZDYzNjczMGMwY2IucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5YYX8XPeCXw_AR8MXsuFBnd-HPtUq1AXFe68D127b34" alt="Logo" height="300">
   </a>
-  <h2 align="center">Catify: the world😼💖</h2> 
+  <h2 align="center">Catify: The World😼💖</h2> 
   <h3 align="center">Game project with Python and Object Oriented Programming (OOP) structure</h3>
 
   <p align="center">
@@ -63,7 +63,7 @@
   <li><b>Stela Nascimento:</b> Responsible for the creation of 6 levels, creation of the Platform Class (platforms moving in the vertical and horizontal direction), tile customization added, addition of a new enemy and sounds, as well as changing the coin image and finally, fixed some bugs like counting the coins in the levels and ensuring that the player didn't get two coins at the same time.</li>
   <li><b>Thaís Neves:</b> Responsible for the visual and design part of the game, implementation of backgrounds. Also, was able to fix bugs and help with the organization and functions of other members, in addition to being part of the construction of the documentation and final presentation.</li>
   <li><b>Miriam Mendes:</b> Responsible for Separate the concepts that were seen in the classes used within the code. Also, separate the libraries, tools and frameworks used in the code and justify the use of each one. Besides that, created a responsive mode for the game to run on smaller screens, with scale adjustment.</li>
-  <li><b>Isaias Pereira:</b> </li>
+  <li><b>Isaias Pereira: Responsible for refactoring, organizing and cleaning the main GamePlay.py code; assist in maintaining track capture and other tasks; the logic that protects the player from creating two coins at the same time, allowing the item "coin" to have an independent size; and creation of the "restaurant" hard level.</b> </li>
   </td>
  </tr>
  </table>
