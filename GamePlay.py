@@ -10,6 +10,9 @@ from classes.world.World import World, blob_group, lava_group, exit_group, coin_
 
 from levels.levels_data import next_level_array
 
+from mapeamento import digit_to_7seg, write_right_display, write_green_leds, write_red_leds
+
+
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
@@ -134,13 +137,18 @@ while (run == True):
                 run = False
 
             if start_button.draw() == True:
+                write_green_leds(0b111111111)
                 main_menu = False
                 zerou_jogo = False
 
         else:
-
+            write_green_leds(0b111111111)
             world.draw()
+            # Pontuação dentro do jogo
             draw_text(screen, ' X ' + str(score), font_score, black, tile_size + 40, 17)
+            
+            # Pontuação na placa
+            write_right_display(digit_to_7seg(int(score)))
 
             if game_over == 0:
                 if restart_button_running_level.draw() == True:
@@ -159,9 +167,11 @@ while (run == True):
                     if pygame.sprite.collide_rect(player, coin):
                         coin_fx.play()
                         coin.remove(coin_group)
+                        
                         score += 1
                         if (score == num_coins_level):
-                            player.collected_all_coins = True
+                            player.collected_all_coins = True 
+                    # write_green_leds(0b000000000)
 
 
             blob_group.draw(screen)
@@ -175,8 +185,11 @@ while (run == True):
 
             # If player died
             if game_over == -1:
+                write_green_leds(0b000000000)
+                write_red_leds(0b111111111)
                 draw_text(screen, 'Miaaaaaaaau!!! >:(', font_miau, red,
                         (screen_width // 2) - 250, screen_height // 2)
+                
                 if restart_button.draw() == True:
                     # Foi criado uma classe reset no player
                     # para o botão do reset funcionar.
@@ -185,6 +198,7 @@ while (run == True):
                     score = 0  # Deletar depois se colocarmos um contador de moeda
                     player.reset(88, screen_height - 102)
                     game_over = 0
+                    write_red_leds(0b000000000)
 
             # If player has completed the lvl
             if game_over == 1:

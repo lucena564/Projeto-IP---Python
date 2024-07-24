@@ -3,6 +3,8 @@ import pygame
 from pygame import mixer
 from constants.BackgroundConstants import BackgroundConstants
 from classes.world.World import blob_group, lava_group, exit_group, coin_group, sushi_power_group, platform_group
+from mapeamento import read_button
+
 
 screen = BackgroundConstants.SCREEN
 
@@ -20,7 +22,6 @@ game_over_fx.set_volume(0.2)
 door_fx = pygame.mixer.Sound(path.join('sound', 'Ta-Da-original.wav'))
 door_fx.set_volume(0.1)
 
-
 class Player():
     def __init__(self, x, y):
         self.reset(x, y)
@@ -35,35 +36,40 @@ class Player():
             # Get keypresses
             key = pygame.key.get_pressed()
 
-            if key[pygame.K_UP] and self.jumped == False and self.in_air == False:
-                jump_fx.play()  
+            board_key = read_button()
+
+            # Antes: key[pygame.K_UP]
+            # Handling the UP key press
+            if board_key == 'UP' and self.jumped == False and self.in_air == False:
+                jump_fx.play()
                 if pygame.sprite.spritecollide(self, sushi_power_group, False):
                     for _duration in range(10):
-                        self.vel_y = -30  # Negative move to up
+                        self.vel_y = -30  # Move up
                 else:
                     self.vel_y = -15
                 self.jumped = True
 
-            if key[pygame.K_UP] == False:
+            # Reset jump status when UP key is not pressed
+            if board_key != 'UP':
                 self.jumped = False
 
-            if key[pygame.K_LEFT]:
+            # Handling the LEFT key press
+            if board_key == 'LEFT':
                 dx -= 5
                 self.counter += 1
                 self.direction = -1
 
-            if key[pygame.K_RIGHT]:
+            # Handling the RIGHT key press
+            if board_key == 'RIGHT':
                 dx += 5
                 self.counter += 1
                 self.direction = 1
 
-            if key[pygame.K_RIGHT] == False and key[pygame.K_LEFT] == False:
+            if board_key != 'RIGHT' and board_key != 'LEFT':
                 self.counter = 0
                 self.direction = 0
                 self.index = 0
                 self.image = self.images_right[4]
-                # print(self.image)
-                # print(self.rect)
 
             # Handle animation
             if self.counter > walk_cooldown:
