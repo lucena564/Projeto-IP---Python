@@ -18,11 +18,11 @@ def read_button():
     numero_lido = int.from_bytes(bytes_lidos, 'little')
     os.close(arquivo_dispositivo)
 
-    if numero_lido == 7:
+    if numero_lido == 7: #key3 é o left
         return 'LEFT'
-    elif numero_lido == 13:
-        return 'UP'
     elif numero_lido == 14:
+        return 'UP'
+    elif numero_lido == 11:
         return "RIGHT"
     
     return ''
