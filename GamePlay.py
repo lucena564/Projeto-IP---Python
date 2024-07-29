@@ -198,7 +198,7 @@ while (run == True):
                     score = 0  # Deletar depois se colocarmos um contador de moeda
                     player.reset(88, screen_height - 102)
                     game_over = 0
-                    write_red_leds(0b000000000)
+                    write_red_leds(0b1111111)
 
             # If player has completed the lvl
             if game_over == 1:
